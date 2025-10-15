@@ -1,40 +1,14 @@
 import { Form } from "@/components/ui/form";
-import React from "react";
 import { CgAwards } from "react-icons/cg";
 import { GoPerson } from "react-icons/go";
 import { GrProjects } from "react-icons/gr";
 import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
 import { PiCertificateLight } from "react-icons/pi";
 import { SiHyperskill } from "react-icons/si";
-import { z } from "zod";
 import { ResumeField } from "./FormField";
 import { FormHeading } from "./FormHeading";
 import { FormPlaceHolderSection } from "./FormPlaceHolderSection";
 import FormTextArea from "./FormTextArea";
-const schema = z.object({
-  name: z.string().min(1, { message: "Please enter a name." }),
-  age: z.coerce
-    .number({ message: "Please enter a number." })
-    .positive({ message: "Number must be positive." }),
-});
-
-export type Errors = Record<string, string | string[]>;
-
-export async function submitForm(event: React.FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-
-  const formData = new FormData(event.currentTarget);
-  const result = schema.safeParse(Object.fromEntries(formData as any));
-
-  if (!result.success) {
-    const { fieldErrors } = z.flattenError(result.error);
-    return { errors: fieldErrors as Errors };
-  }
-
-  return {
-    errors: {} as Errors,
-  };
-}
 
 export function ResumeForm() {
   return (
@@ -98,6 +72,7 @@ export function ResumeForm() {
       <FormTextArea field="summary" />
       <hr className="mt-5" />
 
+      <FormPlaceHolderSection heading="Experience" icon={<MdWorkOutline />} />
       <FormPlaceHolderSection
         heading="ExtraCurricular"
         icon={<MdWorkOutline />}
