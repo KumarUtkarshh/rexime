@@ -1,5 +1,6 @@
 "use client";
 
+import { resumeAtom } from "@/app/store";
 import { Button } from "@/components/ui/button";
 import {
   Field,
@@ -8,17 +9,20 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Form } from "@/components/ui/form";
-import * as React from "react";
+import { ResumeData } from "@/lib/resume-types";
+import { useAtom } from "jotai";
+import React from "react";
 import { BsTextParagraph } from "react-icons/bs";
 import { CgAwards } from "react-icons/cg";
 import { GoPerson } from "react-icons/go";
 import { GrProjects } from "react-icons/gr";
-import { IoMdClose } from "react-icons/io";
 import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
 import { PiCertificateLight } from "react-icons/pi";
 import { SiHyperskill } from "react-icons/si";
 import { z } from "zod";
-import { Textarea } from "./ui/textarea";
+import { Textarea } from "../ui/textarea";
+import { FormHeading } from "./FormHeading";
+import { FormPlaceHolderSection } from "./FormPlaceHolderSection";
 const schema = z.object({
   name: z.string().min(1, { message: "Please enter a name." }),
   age: z.coerce
@@ -26,9 +30,9 @@ const schema = z.object({
     .positive({ message: "Number must be positive." }),
 });
 
-type Errors = Record<string, string | string[]>;
+export type Errors = Record<string, string | string[]>;
 
-async function submitForm(event: React.FormEvent<HTMLFormElement>) {
+export async function submitForm(event: React.FormEvent<HTMLFormElement>) {
   event.preventDefault();
 
   const formData = new FormData(event.currentTarget);
@@ -44,46 +48,11 @@ async function submitForm(event: React.FormEvent<HTMLFormElement>) {
   };
 }
 
-function FormHeading({
-  heading,
-  icon,
-}: {
-  heading: string;
-  icon: React.ReactElement;
-}) {
-  return (
-    <div className="flex items-center mb-4 mt-2 justify-between">
-      <div className="flex items-center gap-2">
-        <div className="text-xl">{icon}</div>
-        <h1 className="text-3xl font-semibold">{heading}</h1>
-      </div>
-      <Button className="rounded-full" variant="secondary" size="icon">
-        <IoMdClose />
-      </Button>
-    </div>
-  );
-}
-function FormPlaceHolderSection({
-  heading,
-  icon,
-}: {
-  heading: string;
-  icon: React.ReactElement;
-}) {
-  return (
-    <div>
-      <FormHeading heading={heading} icon={icon} />
-      <Button variant="outline" className="w-full p-6">
-        Add a new item
-      </Button>
-      <hr className="w-full mt-7" />
-    </div>
-  );
-}
 export function ResumeForm() {
   const [loading, setLoading] = React.useState(false);
   const [errors, setErrors] = React.useState<Errors>({});
   const handleClearErrors = (next: Errors) => setErrors(next);
+  const [resumeData, setResumeData] = useAtom(resumeAtom);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     const formEl = event.currentTarget;
@@ -100,6 +69,45 @@ export function ResumeForm() {
         )}`
       );
     }
+  };
+
+  // 🔹 Update top-level string fields (like name, title, summary)
+  const updateField = <K extends keyof ResumeData>(
+    field: K,
+    value: ResumeData[K]
+  ) => {
+    setResumeData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  // const updateNestedField = <
+  //   K extends keyof ResumeData,
+  //   NK extends keyof NonNullable<ResumeData[K]>
+  // >(
+  //   field: K,
+  //   nestedKey: NK,
+  //   value: any
+  // ) => {
+  //   setResumeData((prev) => ({
+  //     ...prev,
+  //     [field]: {
+  //       ...(prev[field] || {}),
+  //       [nestedKey]: value,
+  //     },
+  //   }));
+  // };
+
+  const addSectionItem = <K extends keyof ResumeData>(
+    field: K,
+    newItem: any
+  ) => {
+    if (!Array.isArray(resumeData[field])) return;
+    setResumeData((prev) => ({
+      ...prev,
+      [field]: [...(prev[field] as any[]), newItem],
+    }));
   };
 
   return (
