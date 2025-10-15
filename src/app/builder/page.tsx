@@ -1,5 +1,5 @@
 import { ResumeForm } from "@/components/form/ResumeForm";
-import TemplateAmazing from "@/components/templates/template-amazing";
+import TemplateSelector from "@/components/templates/TemplateSelector";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Page() {
@@ -13,8 +13,8 @@ export default function Page() {
       </aside>
 
       {/* MIDDLE SECTION — Resume preview */}
-      <main className="w-2/4 flex items-center justify-center relative">
-        <TemplateAmazing />
+      <main className="w-2/4 h-full">
+        <TemplateSelector />
       </main>
 
       {/* RIGHT SECTION — Scrollable color + template picker */}

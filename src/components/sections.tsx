@@ -15,7 +15,7 @@ export function ResumeHeader({
   data,
   className,
 }: {
-  data: ResumeData;
+  data?: ResumeData;
   className?: string;
 }) {
   if (data == undefined) return;
