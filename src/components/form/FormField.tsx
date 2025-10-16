@@ -7,7 +7,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { useUpdateResume } from "@/hooks/useUpdateResume";
-import { ResumeContact, ResumeData } from "@/lib/resume-types";
+import { ResumeData } from "@/lib/resume-types";
 
 interface ResumeFieldProps {
   label: string;
@@ -15,7 +15,6 @@ interface ResumeFieldProps {
   disabled?: boolean;
   type?: string;
   field: keyof ResumeData;
-  nestedKey?: keyof ResumeContact;
 }
 
 export function ResumeField({
@@ -24,9 +23,8 @@ export function ResumeField({
   disabled,
   type = "text",
   field,
-  nestedKey,
 }: ResumeFieldProps) {
-  const { handleChange } = useUpdateResume(field, nestedKey);
+  const { handleChange } = useUpdateResume(field);
 
   return (
     <Field>

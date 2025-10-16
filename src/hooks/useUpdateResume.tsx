@@ -1,46 +1,82 @@
 import { resumeAtom } from "@/app/store";
-import { ResumeContact, ResumeData } from "@/lib/resume-types";
+import { ResumeData, ResumeSection, ResumeSkills } from "@/lib/resume-types";
 import { useAtom } from "jotai";
+import React from "react";
 
-export const useUpdateResume = (
-  field: keyof ResumeData,
-  nestedKey?: keyof ResumeContact
-) => {
+export const useUpdateResume = (field?: keyof ResumeData) => {
   const [resumeData, setResumeData] = useAtom(resumeAtom);
 
-  const addSectionItem = <K extends keyof ResumeData>(
-    field: K,
-    newItem: any
-  ) => {
-    if (!Array.isArray(resumeData[field])) return;
-    setResumeData((prev) => ({
-      ...prev,
-      [field]: [...(prev[field] as any[]), newItem],
-    }));
-  };
-
+  // Generic handler for top-level text fields
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const value = e.target.value;
+    if (!field) return;
 
+    setResumeData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  // Add a new section (Experience, Projects, etc.)
+  const addSection = (newSection: ResumeSection) => {
+    setResumeData((prev) => ({
+      ...prev,
+      sections: [...(prev.sections ?? []), newSection],
+    }));
+  };
+
+  // Add an item (ResumeEntry) to a specific section by id
+  const addSectionItem = (sectionId: string, newItem: any) => {
     setResumeData((prev) => {
-      if (nestedKey) {
-        const nested = prev[field] ?? {};
-        return {
-          ...prev,
-          [field]: {
-            ...nested,
-            [nestedKey]: value,
-          },
-        };
-      }
-      return {
-        ...prev,
-        [field]: value,
-      };
+      const updatedSections = (prev.sections ?? []).map((section) =>
+        section.id === sectionId
+          ? { ...section, items: [...section.items, newItem] }
+          : section
+      );
+      return { ...prev, sections: updatedSections };
     });
   };
 
-  return { handleChange, addSectionItem };
+  // Update a field inside a specific section item
+  const updateSectionItem = (
+    sectionId: string,
+    itemIndex: number,
+    key: keyof any,
+    value: any
+  ) => {
+    setResumeData((prev) => {
+      const updatedSections = (prev.sections ?? []).map((section) => {
+        if (section.id !== sectionId) return section;
+        const updatedItems = section.items.map((item, idx) =>
+          idx === itemIndex ? { ...item, [key]: value } : item
+        );
+        return { ...section, items: updatedItems };
+      });
+      return { ...prev, sections: updatedSections };
+    });
+  };
+
+  // Add or update skills dynamically
+  const updateSkillCategory = (
+    category: keyof ResumeSkills,
+    newSkills: string[]
+  ) => {
+    setResumeData((prev) => ({
+      ...prev,
+      skills: {
+        ...(prev.skills ?? {}),
+        [category]: newSkills,
+      },
+    }));
+  };
+
+  return {
+    handleChange,
+    addSection,
+    addSectionItem,
+    updateSectionItem,
+    updateSkillCategory,
+  };
 };

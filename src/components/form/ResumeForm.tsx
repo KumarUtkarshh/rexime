@@ -26,45 +26,23 @@ export function ResumeForm() {
           <ResumeField
             label="Email"
             placeholder="email@gmail.com"
-            field="contact"
-            nestedKey="email"
+            field="email"
           />
-          <ResumeField
-            label="Website"
-            placeholder="xyz.com"
-            field="contact"
-            nestedKey="website"
-          />
+          <ResumeField label="Website" placeholder="xyz.com" field="website" />
         </div>
 
         <div className="flex gap-2">
           <ResumeField
             label="LinkedIn"
             placeholder="linkedin url"
-            field="contact"
-            nestedKey="linkedin"
+            field="linkedin"
           />
-          <ResumeField
-            label="Github"
-            placeholder="github url"
-            field="contact"
-            nestedKey="github"
-          />
+          <ResumeField label="Github" placeholder="github url" field="github" />
         </div>
 
         <div className="flex gap-2">
-          <ResumeField
-            label="Phone"
-            placeholder="+1 101010101"
-            field="contact"
-            nestedKey="phone"
-          />
-          <ResumeField
-            label="Location"
-            placeholder="Mars"
-            field="contact"
-            nestedKey="location"
-          />
+          <ResumeField label="Phone" placeholder="+1 101010101" field="phone" />
+          <ResumeField label="Location" placeholder="Mars" field="location" />
         </div>
       </div>
 
