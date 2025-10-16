@@ -1,19 +1,13 @@
 "use client";
 
 import { useUpdateResume } from "@/hooks/useUpdateResume";
-import { ResumeContact, ResumeData } from "@/lib/resume-types";
+import { ResumeData } from "@/lib/resume-types";
 import { BsTextParagraph } from "react-icons/bs";
 import { Textarea } from "../ui/textarea";
 import { FormHeading } from "./FormHeading";
 
-export default function FormTextArea({
-  field,
-  nestedKey,
-}: {
-  field: keyof ResumeData;
-  nestedKey?: keyof ResumeContact;
-}) {
-  const { handleChange } = useUpdateResume(field, nestedKey);
+export default function FormTextArea({ field }: { field: keyof ResumeData }) {
+  const { handleChange } = useUpdateResume(field);
 
   return (
     <div className="summary">

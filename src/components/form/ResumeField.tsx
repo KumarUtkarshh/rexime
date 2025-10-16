@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Field,
-  FieldControl,
-  FieldError,
-  FieldLabel,
-} from "@/components/ui/field";
+import { Field, FieldControl, FieldLabel } from "@/components/ui/field";
 import { useUpdateResume } from "@/hooks/useUpdateResume";
 import { ResumeData } from "@/lib/resume-types";
 
@@ -35,7 +30,6 @@ export function ResumeField({
         disabled={disabled}
         type={type}
       />
-      <FieldError />
     </Field>
   );
 }

@@ -25,7 +25,7 @@ export default function Component({ withTrigger = true }) {
           <Button variant="default">Sign In</Button>
         </DialogTrigger>
       )}
-      <DialogContent>
+      <DialogContent className="w-md">
         <div className="flex flex-col items-center gap-2">
           <div className={`h-12 ${ibmplexmono.className} `}>MinoMap AI</div>
           {/* <div

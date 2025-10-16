@@ -1,18 +1,17 @@
-import { Form } from "@/components/ui/form";
 import { CgAwards } from "react-icons/cg";
 import { GoPerson } from "react-icons/go";
 import { GrProjects } from "react-icons/gr";
 import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
 import { PiCertificateLight } from "react-icons/pi";
 import { SiHyperskill } from "react-icons/si";
-import { ResumeField } from "./FormField";
 import { FormHeading } from "./FormHeading";
 import { FormPlaceHolderSection } from "./FormPlaceHolderSection";
 import FormTextArea from "./FormTextArea";
+import { ResumeField } from "./ResumeField";
 
 export function ResumeForm() {
   return (
-    <Form>
+    <div>
       <div className="basics">
         <FormHeading heading="Basics" icon={<GoPerson />} />
         <ResumeField label="Full Name" placeholder="Enter name" field="name" />
@@ -66,6 +65,6 @@ export function ResumeForm() {
         icon={<PiCertificateLight />}
       />
       <FormPlaceHolderSection heading="Projects" icon={<GrProjects />} />
-    </Form>
+    </div>
   );
 }

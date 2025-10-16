@@ -8,7 +8,7 @@ function Field({ className, ...props }: FieldPrimitive.Root.Props) {
   return (
     <FieldPrimitive.Root
       data-slot="field"
-      className={cn("flex flex-col items-start gap-2 pt-2", className)}
+      className={cn("flex flex-col items-start gap-2 pt-3", className)}
       {...props}
     />
   );
@@ -46,7 +46,7 @@ function FieldControl({
       <FieldPrimitive.Control
         data-slot="field-control"
         className={cn(
-          "w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] outline-none placeholder:text-muted-foreground/64",
+          "w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(3)-1px)] outline-none placeholder:text-muted-foreground/64",
           size === "sm" &&
             "px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)]",
           size === "lg" && "py-[calc(--spacing(2)-1px)]",
