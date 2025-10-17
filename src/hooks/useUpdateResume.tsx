@@ -8,9 +8,9 @@ export const useUpdateResume = (field?: keyof ResumeData) => {
 
   // Generic handler for top-level text fields
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | string
   ) => {
-    const value = e.target.value;
+    const value = typeof e === "string" ? e : e.target.value;
     if (!field) return;
 
     setResumeData((prev) => ({

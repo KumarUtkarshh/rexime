@@ -1,5 +1,7 @@
 "use client";
 
+import { useUpdateResume } from "@/hooks/useUpdateResume";
+import { ResumeData } from "@/lib/resume-types";
 import { Color } from "@tiptap/extension-color";
 import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
@@ -9,13 +11,15 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Toolbar } from "./Toolbar";
 
-// The initial content from your screenshot
-const initialContent = `
-  <h2>Aspiring software developer with 4+ years of experience</h2>
-  <p>in app and web development, building full-stack projects with React, Firebase, and Flutter. Passionate about solving real-world problems and seeking impactful roles in globally recognized tech companies.</p>
-`;
+// // The initial content from your screenshot
+// const initialContent = `
+//   <h2>Aspiring software developer with 4+ years of experience</h2>
+//   <p>in app and web development, building full-stack projects with React, Firebase, and Flutter. Passionate about solving real-world problems and seeking impactful roles in globally recognized tech companies.</p>
+// `;
 
-const TiptapEditor = () => {
+const TiptapEditor = ({ field }: { field: keyof ResumeData }) => {
+  const { handleChange } = useUpdateResume(field);
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -34,11 +38,14 @@ const TiptapEditor = () => {
       TextStyle,
       Color,
     ],
-    content: initialContent,
+    // content: content,
     editorProps: {
       attributes: {
-        class: "tiptap", // Use the class from globals.css
+        class: "tiptap-editor", // Use the class from globals.css
       },
+    },
+    onUpdate: ({ editor }) => {
+      handleChange(editor.getHTML());
     },
     immediatelyRender: false,
   });

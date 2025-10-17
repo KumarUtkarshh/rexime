@@ -127,8 +127,8 @@
   }
 }
 
-.tiptap {
-  @apply rounded-b-md border border-t-0 border-gray-700 p-4 min-h-[200px] focus:outline-none;
+.tiptap-editor {
+  @apply rounded-b-md border border-t-0 border-gray-700 p-4 min-h-[150px] focus:outline-none;
 }
 
 .tiptap > p:first-child {
@@ -185,4 +185,8 @@
 
 .tiptap ol {
   @apply list-decimal;
+}
+
+button {
+  @apply cursor-pointer;
 }

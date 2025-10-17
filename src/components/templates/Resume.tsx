@@ -46,7 +46,10 @@ export default function Resume({ data }: Props) {
           <h2 className="font-bold text-lg border-b border-gray-400 mb-1">
             SUMMARY
           </h2>
-          <p className="text-sm">{data.summary}</p>
+          <div
+            className="tiptap border-none min-h-auto"
+            dangerouslySetInnerHTML={{ __html: data.summary }}
+          />
         </section>
       )}
 
