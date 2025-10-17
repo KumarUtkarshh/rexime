@@ -6,8 +6,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { sectionData } from "@/lib/utils";
+import { DialogTipTapEditor } from "../editor/DialogTipTapEditor";
 import { Field, FieldControl, FieldLabel } from "../ui/field";
-import { Textarea } from "../ui/textarea";
 
 function DialogField({
   label,
@@ -30,7 +30,7 @@ export default function AddNewItemDialog({ id }: { id: string }) {
 
   return (
     <Dialog>
-      <DialogTrigger className="w-full">
+      <DialogTrigger className="w-full" asChild>
         <Button variant="outline" className="w-full p-6">
           Add a new item
         </Button>
@@ -45,13 +45,7 @@ export default function AddNewItemDialog({ id }: { id: string }) {
           <DialogField label={data.title3} placeholder={data.placeholder3} />
           <DialogField label={data.title4} placeholder={data.placeholder4} />
         </div>
-        <Field>
-          <FieldLabel>Description</FieldLabel>
-          <Textarea placeholder="Write something..." className="h-32" />
-        </Field>
-        <div className="text-end mt-3">
-          <Button className="w-fit">Save Changes</Button>
-        </div>
+        <DialogTipTapEditor />
       </DialogContent>
     </Dialog>
   );

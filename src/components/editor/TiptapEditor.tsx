@@ -1,7 +1,5 @@
 "use client";
 
-import { useUpdateResume } from "@/hooks/useUpdateResume";
-import { ResumeData } from "@/lib/resume-types";
 import { Color } from "@tiptap/extension-color";
 import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
@@ -17,9 +15,11 @@ import { Toolbar } from "./Toolbar";
 //   <p>in app and web development, building full-stack projects with React, Firebase, and Flutter. Passionate about solving real-world problems and seeking impactful roles in globally recognized tech companies.</p>
 // `;
 
-const TiptapEditor = ({ field }: { field: keyof ResumeData }) => {
-  const { handleChange } = useUpdateResume(field);
-
+const TiptapEditor = ({
+  onContentChange,
+}: {
+  onContentChange: (html: string) => void;
+}) => {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -45,8 +45,9 @@ const TiptapEditor = ({ field }: { field: keyof ResumeData }) => {
       },
     },
     onUpdate: ({ editor }) => {
-      handleChange(editor.getHTML());
+      onContentChange(editor.getHTML());
     },
+
     immediatelyRender: false,
   });
 
