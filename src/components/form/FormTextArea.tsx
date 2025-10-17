@@ -3,7 +3,7 @@
 import { useUpdateResume } from "@/hooks/useUpdateResume";
 import { ResumeData } from "@/lib/resume-types";
 import { BsTextParagraph } from "react-icons/bs";
-import { Textarea } from "../ui/textarea";
+import TiptapEditor from "../editor/TiptapEditor";
 import { FormHeading } from "./FormHeading";
 
 export default function FormTextArea({ field }: { field: keyof ResumeData }) {
@@ -12,11 +12,7 @@ export default function FormTextArea({ field }: { field: keyof ResumeData }) {
   return (
     <div className="summary">
       <FormHeading heading="Summary" icon={<BsTextParagraph />} />
-      <Textarea
-        className="h-32"
-        placeholder="Write about yourself"
-        onChange={handleChange}
-      />
+      <TiptapEditor />
     </div>
   );
 }
