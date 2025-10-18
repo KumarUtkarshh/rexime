@@ -8,6 +8,7 @@ import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
 import { PiCertificateLight } from "react-icons/pi";
 import { SiHyperskill } from "react-icons/si";
 import { FormPlaceHolderSection } from "./FormPlaceHolderSection";
+import FormTextArea from "./FormTextArea";
 
 export function ResumeSections() {
   const resumeData = useAtomValue(resumeAtom);
@@ -24,6 +25,9 @@ export function ResumeSections() {
 
   return (
     <div>
+      <hr className="mt-5" />
+      <FormTextArea field="summary" content={resumeData.summary} />
+      <hr className="mt-7 mb-4" />
       {resumeData.sections &&
         resumeData.sections.map((section, key) => (
           <FormPlaceHolderSection

@@ -1,6 +1,5 @@
 import { GoPerson } from "react-icons/go";
 import { FormHeading } from "./FormHeading";
-import FormTextArea from "./FormTextArea";
 import { ResumeField } from "./ResumeField";
 import { ResumeSections } from "./ResumeSections";
 
@@ -39,10 +38,6 @@ export function ResumeForm() {
           <ResumeField label="Location" placeholder="Mars" field="location" />
         </div>
       </div>
-
-      <hr className="mt-5" />
-      <FormTextArea field="summary" />
-      <hr className="mt-7 mb-4" />
 
       <ResumeSections />
     </div>

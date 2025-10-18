@@ -5,6 +5,8 @@ export const sampleData: ResumeData = {
   phone: "+91-8989898989",
   email: "Johndoe@gmail.com",
   linkedin: "https://www.linkedin.com/in/johndoe",
+  summary:
+    "<p>Innovative Programmer and Internet Entrepreneur striving to make the world a more unified and connected place. A creative thinker, adept in software development and working with various data structures.</p>",
   sections: [
     // ---------------- Education ----------------
     {
@@ -219,6 +221,8 @@ export const mockBerlinData: ResumeData = {
   phone: "(315) 802-8179",
   email: "taylor.cook@gmail.com",
   nationality: "American",
+  summary:
+    "<p>Innovative Programmer and Internet Entrepreneur striving to make the world a more unified and connected place. A creative thinker, adept in software development and working with various data structures.</p>",
   skillsBerlin: [
     "Performance Optimization",
     "Troubleshooting and Solutions Deployment",
@@ -228,15 +232,6 @@ export const mockBerlinData: ResumeData = {
   ],
   languages: ["English", "French"],
   sections: [
-    {
-      id: "profile",
-      title: "PROFILE",
-      items: [
-        {
-          editorHTML: `<p>Innovative Programmer and Internet Entrepreneur striving to make the world a more unified and connected place. A creative thinker, adept in software development and working with various data structures.</p>`,
-        },
-      ],
-    },
     {
       id: "experience",
       title: "EMPLOYMENT HISTORY",

@@ -59,6 +59,7 @@ export const useUpdateResume = (field?: keyof ResumeData) => {
   };
 
   return {
+    resumeData,
     handleChange,
     addSection,
     addSectionItem,

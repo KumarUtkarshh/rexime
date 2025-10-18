@@ -218,6 +218,14 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
 
       {/* Right Column */}
       <main className="w-[64%] p-10">
+        {data.summary && (
+          <section className="mb-4">
+            <h2 className="text-xl font-bold mb-4 pb-1 border-b-2 border-gray-200">
+              SUMMARY
+            </h2>
+            <div dangerouslySetInnerHTML={{ __html: data.summary }} />
+          </section>
+        )}
         {data.sections?.map((section) => (
           <RightColumnSection key={section.id} section={section} />
         ))}
