@@ -20,15 +20,17 @@ export function FormPlaceHolderSection({
   entries: ResumeEntry[];
 }) {
   const isEditorOpen = useAtomValue(openCustomEditorAtom);
-
+  const id = heading.toLowerCase();
   return (
     <div>
       <FormHeading heading={heading} icon={icon} />
-      {isEditorOpen && heading.toLowerCase() == "skills" ? (
+
+      {(isEditorOpen && id == "skills") || id == "achievements" ? (
         <TiptapEditor
           onContentChange={function (html: string): void {
             throw new Error("Function not implemented.");
           }}
+          content={entries[0].editorHTML}
         />
       ) : (
         <div>
