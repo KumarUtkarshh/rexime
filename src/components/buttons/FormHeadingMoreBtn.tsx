@@ -1,3 +1,6 @@
+"use client";
+
+import { openCustomEditorAtom } from "@/app/store";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -5,11 +8,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useAtom } from "jotai";
 import { CgMoreVertical } from "react-icons/cg";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
-import { VscEdit } from "react-icons/vsc";
+import { VscEdit, VscEditorLayout } from "react-icons/vsc";
 
 export default function FormHeadingMoreBtn() {
+  const [editorIsOpen, setEditorOpen] = useAtom(openCustomEditorAtom);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,6 +27,18 @@ export default function FormHeadingMoreBtn() {
         <DropdownMenuItem>
           <VscEdit size={16} className="opacity-60" aria-hidden="true" />
           Edit Heading
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            setEditorOpen(!editorIsOpen);
+          }}
+        >
+          <VscEditorLayout
+            size={16}
+            className="opacity-60"
+            aria-hidden="true"
+          />
+          Custom Editor
         </DropdownMenuItem>
         <DropdownMenuItem className="text-destructive">
           <MdOutlineRemoveCircleOutline
