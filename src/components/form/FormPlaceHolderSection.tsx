@@ -2,6 +2,7 @@ import { ResumeEntry } from "@/lib/resume-types";
 import * as React from "react";
 import AddNewItemDialog from "../dialogs/AddNewItemDialog";
 import ItemTileDialog from "../dialogs/ItemTileDialog";
+import SkillDialog from "../dialogs/SkillDialog";
 import { FormHeading } from "./FormHeading";
 
 export function FormPlaceHolderSection({
@@ -20,7 +21,12 @@ export function FormPlaceHolderSection({
         <ItemTileDialog entry={entry} key={key} id={heading.toLowerCase()} />
       ))}
       <div className="mb-5"></div>
-      <AddNewItemDialog id={heading.toLowerCase()} />
+      {heading.toLowerCase() == "skills" ? (
+        <SkillDialog />
+      ) : (
+        <AddNewItemDialog id={heading.toLowerCase()} />
+      )}
+
       <hr className="w-full mt-7 mb-4" />
     </div>
   );

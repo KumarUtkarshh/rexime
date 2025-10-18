@@ -6,7 +6,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { sectionData } from "@/lib/constants";
-import { DialogTipTapEditor } from "../editor/DialogTipTapEditor";
+import { SaveChangesBtn } from "../buttons/SaveChangesBtn";
 import { Field, FieldControl, FieldLabel } from "../ui/field";
 
 function DialogField({
@@ -45,7 +45,7 @@ export default function AddNewItemDialog({ id }: { id: string }) {
           <DialogField label={data.title3} placeholder={data.placeholder3} />
           <DialogField label={data.title4} placeholder={data.placeholder4} />
         </div>
-        <DialogTipTapEditor />
+        <SaveChangesBtn />
       </DialogContent>
     </Dialog>
   );

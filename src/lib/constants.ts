@@ -282,6 +282,17 @@ export const sectionData: Record<string, SectionFields> = {
     placeholder4: "www.xyz.com",
   },
 
+  skills: {
+    title1: "Skill",
+    placeholder1: "Languages",
+    title2: "Values",
+    placeholder2: "React, Tailwind, ...",
+    title3: "",
+    placeholder3: "",
+    title4: "",
+    placeholder4: "",
+  },
+
   education: {
     title1: "Degree",
     placeholder1: "Bachelor of Computer Science",
