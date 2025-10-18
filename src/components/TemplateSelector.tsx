@@ -48,15 +48,13 @@ export default function TemplateSelector() {
   return (
     <div className="grid grid-cols-2 gap-3">
       {images.map((data, key) => (
-        <div className={index == key ? "" : ""}>
-          <ResumeImage
-            isSel={index == key}
-            key={data.imagePath}
-            src={data.imagePath}
-            alt={data.imagePath.slice(1)}
-            onClick={() => handleClick(key, data.defaultResume)}
-          />
-        </div>
+        <ResumeImage
+          isSel={index == key}
+          key={key}
+          src={data.imagePath}
+          alt={data.imagePath.slice(1)}
+          onClick={() => handleClick(key, data.defaultResume)}
+        />
       ))}
     </div>
   );

@@ -6,6 +6,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { sectionData } from "@/lib/constants";
+import { ResumeEntry } from "@/lib/resume-types";
 import { AiOutlineHolder } from "react-icons/ai";
 import { DialogTipTapEditor } from "../editor/DialogTipTapEditor";
 import { Field, FieldControl, FieldLabel } from "../ui/field";
@@ -13,43 +14,71 @@ import { Field, FieldControl, FieldLabel } from "../ui/field";
 function DialogField({
   label,
   placeholder,
+  value,
 }: {
   label: string;
   placeholder: string;
+  value: string | undefined;
 }) {
   return (
     <Field className="w-full">
       <FieldLabel>{label}</FieldLabel>
-      <FieldControl placeholder={placeholder} />
+      <FieldControl placeholder={placeholder} value={value} />
     </Field>
   );
 }
 
-export default function AddNewItemDialog() {
-  let data = sectionData["experience"];
+export default function AddNewItemDialog({
+  entry,
+  id,
+}: {
+  entry: ResumeEntry;
+  id: string;
+}) {
+  let data = sectionData[id];
+  if (data == undefined) data = sectionData["experience"];
 
   return (
     <Dialog>
       <DialogTrigger className="w-full" asChild>
-        <Button variant="secondary" className="w-full px-4 py-8 justify-start">
+        <Button
+          variant="secondary"
+          className="w-full px-4 py-8 mb-2 justify-start"
+        >
           <AiOutlineHolder />
           <div className="flex flex-col text-start pl-2">
-            <div>Software Development Engineer - 1</div>
-            <div className="text-xs font-normal">Amazon India</div>
+            <div>{entry.title ?? "Update " + id}</div>
+            <div className="text-xs font-normal">{entry.subtitle}</div>
           </div>
         </Button>
       </DialogTrigger>
       <DialogContent className="gap-2">
-        <DialogTitle>New Item</DialogTitle>
+        <DialogTitle>Update Item</DialogTitle>
         <div className="flex gap-2">
-          <DialogField label={data.title1} placeholder={data.placeholder1} />
-          <DialogField label={data.title2} placeholder={data.placeholder2} />
+          <DialogField
+            label={data.title1}
+            placeholder={data.placeholder1}
+            value={entry.title}
+          />
+          <DialogField
+            label={data.title2}
+            placeholder={data.placeholder2}
+            value={entry.subtitle}
+          />
         </div>
         <div className="flex gap-2">
-          <DialogField label={data.title3} placeholder={data.placeholder3} />
-          <DialogField label={data.title4} placeholder={data.placeholder4} />
+          <DialogField
+            label={data.title3}
+            placeholder={data.placeholder3}
+            value={entry.meta}
+          />
+          <DialogField
+            label={data.title4}
+            placeholder={data.placeholder4}
+            value={entry.website}
+          />
         </div>
-        <DialogTipTapEditor />
+        <DialogTipTapEditor content={entry.editorHTML} />
       </DialogContent>
     </Dialog>
   );

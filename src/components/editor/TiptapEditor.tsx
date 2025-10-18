@@ -16,8 +16,10 @@ import { Toolbar } from "./Toolbar";
 // `;
 
 const TiptapEditor = ({
+  content,
   onContentChange,
 }: {
+  content?: string;
   onContentChange: (html: string) => void;
 }) => {
   const editor = useEditor({
@@ -38,7 +40,7 @@ const TiptapEditor = ({
       TextStyle,
       Color,
     ],
-    // content: content,
+    content: content,
     editorProps: {
       attributes: {
         class: "tiptap-editor", // Use the class from globals.css

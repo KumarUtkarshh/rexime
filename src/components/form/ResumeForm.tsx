@@ -1,13 +1,8 @@
-import { CgAwards } from "react-icons/cg";
 import { GoPerson } from "react-icons/go";
-import { GrProjects } from "react-icons/gr";
-import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
-import { PiCertificateLight } from "react-icons/pi";
-import { SiHyperskill } from "react-icons/si";
 import { FormHeading } from "./FormHeading";
-import { FormPlaceHolderSection } from "./FormPlaceHolderSection";
 import FormTextArea from "./FormTextArea";
 import { ResumeField } from "./ResumeField";
+import { ResumeSections } from "./ResumeSections";
 
 export function ResumeForm() {
   return (
@@ -49,22 +44,7 @@ export function ResumeForm() {
       <FormTextArea field="summary" />
       <hr className="mt-7 mb-4" />
 
-      <FormPlaceHolderSection heading="Experience" icon={<MdWorkOutline />} />
-      <FormPlaceHolderSection
-        heading="Education"
-        icon={<MdAssuredWorkload />}
-      />
-      <FormPlaceHolderSection heading="Skills" icon={<SiHyperskill />} />
-      <FormPlaceHolderSection heading="Projects" icon={<GrProjects />} />
-      <FormPlaceHolderSection heading="Awards" icon={<CgAwards />} />
-      <FormPlaceHolderSection
-        heading="Certifications"
-        icon={<PiCertificateLight />}
-      />
-      <FormPlaceHolderSection
-        heading="ExtraCurricular"
-        icon={<MdWorkOutline />}
-      />
+      <ResumeSections />
     </div>
   );
 }
