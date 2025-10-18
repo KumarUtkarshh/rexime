@@ -7,7 +7,7 @@ import {
   TransformWrapper,
   useControls,
 } from "react-zoom-pan-pinch";
-import Resume from "./templates/Resume";
+import { ResumeBerlin } from "./templates/ResumeBerlin";
 
 const Controls = () => {
   const { zoomIn, zoomOut, resetTransform } = useControls();
@@ -36,7 +36,7 @@ export default function TemplateShowcase() {
         <>
           {/* <Controls /> */}
           <TransformComponent>
-            <Resume data={data} />
+            <ResumeBerlin data={data} />
           </TransformComponent>
         </>
       )}

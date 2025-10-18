@@ -6,15 +6,6 @@ const sampleData: ResumeData = {
   phone: "+91-8989898989",
   email: "Johndoe@gmail.com",
   linkedin: "https://www.linkedin.com/in/johndoe",
-
-  skills: {
-    languages: ["Java", "Python", "C++", "JavaScript", "SQL"],
-    frameworks: ["Spring Boot", "Node.js", "React.js", "Flask"],
-    databases: ["PostgreSQL", "DynamoDB", "MongoDB"],
-    cloud: ["AWS (Lambda, S3, EC2, API Gateway)"],
-    tools: ["Git", "Docker", "Kubernetes", "Jenkins"],
-  },
-
   sections: [
     // ---------------- Education ----------------
     {
@@ -51,6 +42,23 @@ const sampleData: ResumeData = {
           meta: "Jan 2022 – June 2022 | Hyderabad, India",
           editorHTML:
             "<ul><li>Built an automated anomaly detection tool using Python and AWS, reducing manual checks by 60%.</li><li>Developed an internal debugging dashboard for the supply chain team, reducing incident resolution time.</li></ul>",
+        },
+      ],
+    },
+    //-----------------------Skills--------------------
+    {
+      id: "skills",
+      title: "Skills",
+      displayOrder: 5,
+      items: [
+        {
+          editorHTML: `<div>
+  <p>Languages: Java, Python, C++, JavaScript, SQL</p>
+  <p>Frameworks: Spring Boot, Node.js, React.js, Flask</p>
+  <p>Databases: PostgreSQL, DynamoDB, MongoDB</p>
+  <p>Cloud: AWS (Lambda, S3, EC2, API Gateway)</p>
+  <p>Tools: Git, Docker, Kubernetes, Jenkins</p>
+</div>`,
         },
       ],
     },
@@ -205,5 +213,74 @@ export const sampleData2: ResumeData = {
   ],
 };
 
+const mockBerlinData: ResumeData = {
+  name: "TAYLOR COOK",
+  title: "Programmer",
+  location: "1600 Amphitheatre Road\nPalo Alto, CA 94304\nUnited States",
+  phone: "(315) 802-8179",
+  email: "taylor.cook@gmail.com",
+  nationality: "American",
+  // skills: [
+  //   "Performance Optimization",
+  //   "Troubleshooting and Solutions Deployment",
+  //   "Analytical Thinking Skills",
+  //   "Software Design and Development",
+  //   "Coding and Scripting",
+  // ],
+  languages: ["English", "French"],
+  sections: [
+    {
+      id: "profile",
+      title: "PROFILE",
+      items: [
+        {
+          editorHTML: `<p>Innovative Programmer and Internet Entrepreneur striving to make the world a more unified and connected place. A creative thinker, adept in software development and working with various data structures.</p>`,
+        },
+      ],
+    },
+    {
+      id: "experience",
+      title: "EMPLOYMENT HISTORY",
+      items: [
+        {
+          title: "Programmer",
+          subtitle: "Johannes Initiative",
+          location: "Palo Alto",
+          meta: "Dec 2015 --- Present",
+          editorHTML: `<ul><li>Worked to enhance software systems to help educators, scientists, and policy experts already working on some of humanity's greatest challenges.</li><li>Developed and enhances programs to increase accuracy and lower costs.</li><li>Developed strategies to ensure compliance with new standards.</li></ul>`,
+        },
+        {
+          title: "Programmer",
+          subtitle: "Kindlinks, Inc.",
+          location: "Menlo Park, CA",
+          meta: "Feb 2004 - Sep 2015",
+          editorHTML: `<ul><li>Since founding Kindlinks, Inc. in 2004 I continue to work to build and improve it's infrastructure, offerings, product strategy, and design.</li><li>Work to continuously lead developments helping people to create, share, and discover in new ways.</li></ul>`,
+        },
+      ],
+    },
+    {
+      id: "education",
+      title: "EDUCATION",
+      items: [
+        {
+          title: "Master of Computer Science",
+          subtitle: "Boston College",
+          location: "Boston",
+          meta: "Aug 2001 --- Jun 2004",
+        },
+      ],
+    },
+    {
+      id: "skills",
+      title: "SKILLS  ",
+      items: [
+        {
+          editorHTML: `<p>skills: Performance Optimization, Troubleshooting and Solutions Deployment, Analytical Thinking Skills, Software Design and Development, Coding and Scripting</p>`,
+        },
+      ],
+    },
+  ],
+};
+
 export const openSignUpDialogAtom = atom(false);
-export const resumeAtom = atom<ResumeData>(sampleData);
+export const resumeAtom = atom<ResumeData>(mockBerlinData);

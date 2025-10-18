@@ -8,6 +8,7 @@ export type ResumeEntry = {
   subtitle?: string; // Optional subheading, e.g., "Google"
   meta?: string; // e.g., "Jan 2021 – Dec 2023 | Mountain View"
   website?: string;
+  location?: string;
   editorHTML?: string; // Bullet points
   fields?: ResumeField[]; // Arbitrary labeled fields for flexibility
 };
@@ -19,8 +20,6 @@ export type ResumeSection = {
   displayOrder?: number; // optional ordering
 };
 
-export type ResumeSkills = Record<string, string[] | undefined>; // e.g. { languages: ['Java', 'Python'], tools: ['Git', 'Docker'] }
-
 export type ResumeData = {
   name: string;
   title?: string;
@@ -31,8 +30,9 @@ export type ResumeData = {
   github?: string;
   website?: string;
   location?: string;
+  nationality?: string;
+  languages?: string[];
   sections?: ResumeSection[];
-  skills?: ResumeSkills;
 };
 
 export type SectionFields = {

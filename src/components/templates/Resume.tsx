@@ -108,26 +108,6 @@ export default function Resume({ data }: Props) {
               ))}
             </section>
           ))}
-
-      {/* ---------------- Skills Section ---------------- */}
-      {data.skills && Object.keys(data.skills).length > 0 && (
-        <section className="mt-5">
-          <h2 className="font-bold text-lg border-b border-gray-400 mb-1">
-            SKILLS
-          </h2>
-          <div className="space-y-1">
-            {Object.entries(data.skills).map(([category, list]) => {
-              if (!list || list.length === 0) return null;
-              return (
-                <p key={category}>
-                  <span className="font-semibold capitalize">{category}: </span>
-                  {list.join(", ")}
-                </p>
-              );
-            })}
-          </div>
-        </section>
-      )}
     </div>
   );
 }
