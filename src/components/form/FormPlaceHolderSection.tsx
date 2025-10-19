@@ -25,8 +25,12 @@ export function FormPlaceHolderSection({
   React.useEffect(() => {
     if (id == "skills" && entries.some((val) => val.fields == undefined)) {
       setIsEditorOpen(true);
+    } else {
+      setIsEditorOpen(false);
     }
-  }, []);
+    console.log("erunnig");
+  }, [id, entries, setIsEditorOpen]);
+
   return (
     <div>
       <FormHeading heading={heading} icon={icon} />
@@ -36,7 +40,7 @@ export function FormPlaceHolderSection({
           onContentChange={function (html: string): void {
             throw new Error("Function not implemented.");
           }}
-          content={entries[0].editorHTML}
+          content={entries[0].editorHTML ?? ""}
         />
       ) : (
         <div>
