@@ -126,8 +126,8 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
     data;
 
   // Helper to find a specific section
-  const getSection = (title: string) =>
-    sections?.find((s) => s.title.toUpperCase() === title.toUpperCase());
+  //   const getSection = (title: string) =>
+  //     sections?.find((s) => s.title.toUpperCase() === title.toUpperCase());
 
   // Filter out sections that we will render manually (Summary)
   // We can add more here if other top-level fields map to sections
@@ -237,96 +237,4 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
       </main>
     </div>
   );
-};
-
-// -------------------------------------------------
-// 5. MOCK DATA (Sample data from the image)
-// -------------------------------------------------
-
-export const mockData: ResumeData = {
-  name: "Johnatan Alexander Carillo",
-  title: "Operations Manager",
-  phone: "+1 204 555 5555",
-  email: "help@enhancv.com",
-  linkedin: "linkedin.com/in/johnatanc",
-  location: "Austin, TX",
-  summary:
-    "I am experience manager who enjoys tackling big challenges in fulfillment, manufacturing and customer service. I take pride in my ability to build high performing and engaged teams with a passion to win. Manufacturing & logistics are in my blood. For almost a decade I have been at the forefront of many manufacturing transformations as an ambitious operations leader, Lean Six Sigma strategist and functional operator.",
-  sections: [
-    {
-      id: "experience",
-      title: "Experience",
-      items: [
-        {
-          meta: "2017 - Present",
-          location: "Austin, TX",
-          title: "Operations Manager",
-          subtitle: "Ledner Group",
-          editorHTML: `
-            <ul>
-              <li>Accountable for 3.5M monthly units at a $12M yearly revenue.</li>
-              <li>Led teams of 50+ permanent and agency staff, both operations and administrations.</li>
-              <li>Manage a portfolio of $5M+ of campaigns in booked revenue per Quarter across NSW and QLD clients.</li>
-            </ul>
-          `,
-        },
-        {
-          meta: "2013 - 2017",
-          location: "Austin, TX",
-          title: "Area Manager",
-          subtitle: "Bernier",
-          editorHTML: `
-            <ul>
-              <li>Lead and developed a team of 80-100 Amazon Associates in the largest North American Fulfillment Centre to meet daily rates.</li>
-              <li>Responsible for communicating policies to Associates and acting as the primary information source for 4 teams.</li>
-              <li>Partnered with other leadership to ensure the business is operating a balanced lean shift while meeting objectives.</li>
-              <li>Achieved the 2nd highest saving for 2016 at 35.1M units.</li>
-              <li>Instilled and upheld compliance to all safety programs to ensure a safe work environment for all associates.</li>
-            </ul>
-          `,
-        },
-        {
-          meta: "2011 - 2013",
-          location: "Austin, TX",
-          title: "Logistics Administrator",
-          subtitle: "Lessard",
-          editorHTML: `
-            <ul>
-              <li>Collaborated with beneficiary centers to project demand and prepare outgoing food pallets across 9 teams at $1.5M operational cost.</li>
-              <li>Responsible for logging incoming and outgoing food donations into inventory database within the Logistics department.</li>
-              <li>Partnered with local businesses to initiate food donations as well as maintained relationships with current donors.</li>
-            </ul>
-          `,
-        },
-      ],
-    },
-    {
-      id: "achievements",
-      title: "Key Achievements",
-      items: [
-        {
-          title: "33% YoY improvement in department productivity",
-          editorHTML: `<p>Drove team to achieve the best direct rates in the building's history. Second best in the Amazon Robotics network.</p>`,
-        },
-        {
-          title: "Record high department quality benchmark",
-          editorHTML: `<p>Maintained compliance and consistently to drive lowest DPMO in building history. Number one in Amazon Robotics network during peak Season.</p>`,
-        },
-      ],
-    },
-    {
-      id: "projects",
-      title: "Projects",
-      items: [
-        {
-          title: "L/A Accessions Process Improvement",
-          editorHTML: `<p>Acted as lead in agency-wide team to analyze work processes, develop standard operating procedures, build tracking database, and train more than 50 HR specialists and administrative officers on its use.</p>`,
-        },
-        {
-          title: "Optimizing Value Added Consortium",
-          editorHTML: `<p>Research Technician for the Global Supply Chain Laboratory of Texas A&M University as part of the Talent Incubator Program. Researched, designed, and developed operational solutions within the field of supply chain management across different industries and companies.</p>`,
-        },
-      ],
-    },
-  ],
 };

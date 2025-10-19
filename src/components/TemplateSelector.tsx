@@ -1,6 +1,10 @@
 "use client";
 import { resumeAtom, resumeShowCaseIdxAtom } from "@/app/store";
-import { mockBerlinData, sampleData } from "@/lib/constants";
+import {
+  mockBerlinData,
+  sampleData,
+  sampleDataTimeLine,
+} from "@/lib/constants";
 import { ResumeData } from "@/lib/resume-types";
 import { useAtom, useSetAtom } from "jotai";
 import Image from "next/image";
@@ -37,7 +41,7 @@ export default function TemplateSelector() {
   const images = [
     { imagePath: "/resume-simple.png", defaultResume: sampleData },
     { imagePath: "/resume-berlin.jpg", defaultResume: mockBerlinData },
-    { imagePath: "/resume-awesome.jpeg", defaultResume: mockBerlinData },
+    { imagePath: "/resume-timeline.png", defaultResume: sampleDataTimeLine },
   ];
 
   const handleClick = (index: number, resume: ResumeData) => {
