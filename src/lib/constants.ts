@@ -282,6 +282,91 @@ export const sampleDataTimeLine: ResumeData = {
   ],
 };
 
+export const sampleDataAmsterDam: ResumeData = {
+  name: "Wes Turner",
+  title: "Sales Manager",
+  phone: "(719) 555-8237",
+  email: "wes.turner@gmail.com",
+  location: "8765 Arbean Lane\nBoulder, CO 80302\nUnited States",
+  summary:
+    "Experienced and self-motivated Sales Manager with five years of industry experience overseeing sales figures and new account development. Bringing forth a proven track record of working collaboratively with sales teams to achieve goals, increase revenue gains, and advance the sales cycle of the company. A strong leader with the ability to increase sales and develop strategies to retain customers.",
+  sections: [
+    {
+      id: "skills",
+      title: "Skills",
+      items: [
+        { title: "Project Management Skills", meta: "4" },
+        { title: "Business Development Strategy", meta: "5" },
+        { title: "Industry Knowledge", meta: "3" },
+        { title: "Interpersonal Communication Skills", meta: "5" },
+        { title: "Innovative Problem Solving", meta: "4" },
+      ],
+    },
+    {
+      id: "employment",
+      title: "Employment History",
+      items: [
+        {
+          title: "Sales Manager",
+          subtitle: "Winthrop and Lee",
+          location: "Boulder",
+          meta: "Nov 2014 – Sep 2019",
+          editorHTML: `
+            <ul class="list-disc list-outside pl-5 space-y-0.5 mt-1">
+              <li>Helped to achieve a 25% increase in sales revenue over the course of 1 year.</li>
+              <li>Established sales goals by forecasting annual sales quotas and projecting expected sales volume for existing and new products.</li>
+              <li>Effectively monitored competition and appropriately adjusted costs based on supply and demand.</li>
+              <li>Managed sales employees and counseled employees based on their professional growth and productivity.</li>
+            </ul>
+          `,
+        },
+        {
+          title: "Sales Manager",
+          subtitle: "Lola & Co",
+          location: "Denver",
+          meta: "Sep 2010 – Oct 2014",
+          editorHTML: `
+            <ul class="list-disc list-outside pl-5 space-y-0.5 mt-1">
+              <li>Successfully managed a sales team of 10+ people to meet and achieve sales goals.</li>
+              <li>Developed and implemented sales plans to expand customer base and increase customer retention.</li>
+              <li>Presented sales, revenues, and expenses reports to management teams.</li>
+              <li>Researched competition and developed strategies to stand out as a company against competitors.</li>
+              <li>Monitored the performance of sales team members and worked to increase team morale and motivation.</li>
+            </ul>
+          `,
+        },
+        {
+          title: "Sales Associate",
+          subtitle: "The Mighty East",
+          location: "Denver",
+          meta: "Aug 2008 – Aug 2010",
+          editorHTML: `
+            <ul class="list-disc list-outside pl-5 space-y-0.5 mt-1">
+              <li>Provided excellent customer service at all times.</li>
+              <li>Checked prices and promotional sales for customers.</li>
+              <li>Addressed customer queries and concerns to the best of my ability.</li>
+              <li>Helped to increase customer retention by striving to create wonderful customer experiences.</li>
+              <li>Worked with the mission of the company in mind and served as a dedicated and enthusiastic part of the sales team.</li>
+            </ul>
+          `,
+        },
+      ],
+    },
+    {
+      id: "education",
+      title: "Education",
+      items: [
+        {
+          title: "Bachelor of Marketing",
+          subtitle: "Colorado College",
+          location: "Colorado Springs",
+          meta: "Aug 2006 – May 2009",
+        },
+      ],
+    },
+  ],
+};
+
 export const sectionData: Record<string, SectionFields> = {
   experience: {
     title1: "Position",
