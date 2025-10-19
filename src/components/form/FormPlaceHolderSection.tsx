@@ -34,13 +34,26 @@ export function FormPlaceHolderSection({
         />
       ) : (
         <div>
-          {entries.map((entry, key) => (
-            <ItemTileDialog
-              entry={entry}
-              key={key}
-              id={heading.toLowerCase()}
-            />
-          ))}
+          {id == "skills"
+            ? entries.map((entry, key) => (
+                <div key={key}>
+                  {entry.fields?.map((entryFields) => (
+                    <ItemTileDialog
+                      entry={entry}
+                      entryFields={entryFields}
+                      key={key}
+                      id={heading.toLowerCase()}
+                    />
+                  ))}
+                </div>
+              ))
+            : entries.map((entry, key) => (
+                <ItemTileDialog
+                  entry={entry}
+                  key={key}
+                  id={heading.toLowerCase()}
+                />
+              ))}
           <div className="mb-5"></div>
           {heading.toLowerCase() == "skills" ? (
             <SkillDialog />

@@ -54,6 +54,24 @@ export const sampleData: ResumeData = {
       displayOrder: 5,
       items: [
         {
+          fields: [
+            {
+              label: "Communication skill",
+              value: "3",
+            },
+            {
+              label: "Performance Optimization",
+              value: "3",
+            },
+            {
+              label: "Analytical Thinking Skills",
+              value: "3",
+            },
+            {
+              label: "Coding and Scripting",
+              value: "3",
+            },
+          ],
           editorHTML: `<div>
   <p>Languages: Java, Python, C++, JavaScript, SQL</p>
   <p>Frameworks: Spring Boot, Node.js, React.js, Flask</p>

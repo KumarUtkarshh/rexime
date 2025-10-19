@@ -3,6 +3,7 @@ import { resumeAtom } from "@/app/store";
 import { useAtomValue } from "jotai";
 import React from "react";
 import { CgAwards } from "react-icons/cg";
+import { GiAchievement } from "react-icons/gi";
 import { GrProjects } from "react-icons/gr";
 import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
 import { PiCertificateLight } from "react-icons/pi";
@@ -21,6 +22,7 @@ export function ResumeSections() {
     awards: <CgAwards />,
     certifications: <PiCertificateLight />,
     extracurricular: <MdWorkOutline />,
+    achievements: <GiAchievement />,
   };
 
   return (

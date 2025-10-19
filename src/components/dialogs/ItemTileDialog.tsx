@@ -6,7 +6,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { sectionData } from "@/lib/constants";
-import { ResumeEntry } from "@/lib/resume-types";
+import { ResumeEntry, ResumeField } from "@/lib/resume-types";
 import { AiOutlineHolder } from "react-icons/ai";
 import { RiQuestionLine } from "react-icons/ri";
 import { SaveChangesBtn } from "../buttons/SaveChangesBtn";
@@ -46,12 +46,14 @@ function DialogField({
   );
 }
 
-export default function AddNewItemDialog({
+export default function ItemTileDialog({
   entry,
   id,
+  entryFields,
 }: {
   entry: ResumeEntry;
   id: string;
+  entryFields?: ResumeField;
 }) {
   let data = sectionData[id];
   if (data == undefined) data = sectionData["experience"];
@@ -65,7 +67,7 @@ export default function AddNewItemDialog({
         >
           <AiOutlineHolder />
           <div className="flex flex-col text-start pl-2">
-            <div>{entry.title ?? "Update " + id}</div>
+            <div>{entry.title ?? entryFields?.label ?? "Update " + id}</div>
             <div className="text-xs font-normal">{entry.subtitle}</div>
           </div>
         </Button>
