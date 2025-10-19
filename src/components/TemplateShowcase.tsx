@@ -8,6 +8,7 @@ import {
   useControls,
 } from "react-zoom-pan-pinch";
 import Resume from "./templates/Resume";
+import { ResumeAmsterdam } from "./templates/ResumeAmsterdam";
 import { ResumeBerlin } from "./templates/ResumeBerlin";
 import { ResumeTimeLine } from "./templates/ResumeTimeline";
 
@@ -31,6 +32,7 @@ export default function TemplateShowcase() {
     0: <Resume data={data} />,
     1: <ResumeBerlin data={data} />,
     2: <ResumeTimeLine data={data} />,
+    3: <ResumeAmsterdam data={data} />,
   };
 
   return (

@@ -193,14 +193,14 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
         {/* --- DYNAMIC SECTIONS (Experience, Projects, etc.) --- */}
         {dynamicSections?.map((section) => {
           // Normalize title for comparison
-          const sectionTitle = section.title.toUpperCase();
+          //   const sectionTitle = section.title.toUpperCase();
 
           return (
             <section key={section.id}>
               <SectionTitle title={section.title} />
 
               {/* EXPERIENCE Section Layout */}
-              {sectionTitle === "EXPERIENCE" && (
+              {section.id === "experience" && (
                 <div className="relative">
                   {section.items.map((item, index) => (
                     <ExperienceItem
@@ -213,7 +213,7 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
               )}
 
               {/* KEY ACHIEVEMENTS Section Layout */}
-              {sectionTitle === "KEY ACHIEVEMENTS" && (
+              {section.id === "achievements" && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                   {section.items.map((item, index) => (
                     <AchievementItem key={index} item={item} />
@@ -222,9 +222,9 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
               )}
 
               {/* PROJECTS Section (and other defaults) */}
-              {(sectionTitle === "PROJECTS" ||
-                (sectionTitle !== "EXPERIENCE" &&
-                  sectionTitle !== "KEY ACHIEVEMENTS")) && (
+              {(section.id === "projects" ||
+                (section.id !== "experience" &&
+                  section.id !== "achievements")) && (
                 <div>
                   {section.items.map((item, index) => (
                     <DefaultItem key={index} item={item} />

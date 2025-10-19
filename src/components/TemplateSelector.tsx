@@ -9,6 +9,7 @@ import { ResumeData } from "@/lib/resume-types";
 import { useAtom, useSetAtom } from "jotai";
 import Image from "next/image";
 import { MouseEventHandler } from "react";
+import { mockData } from "./templates/ResumeAmsterdam";
 
 function ResumeImage({
   src,
@@ -42,6 +43,7 @@ export default function TemplateSelector() {
     { imagePath: "/resume-simple.png", defaultResume: sampleData },
     { imagePath: "/resume-berlin.jpg", defaultResume: mockBerlinData },
     { imagePath: "/resume-timeline.png", defaultResume: sampleDataTimeLine },
+    { imagePath: "/resume-amsterdam.jpg", defaultResume: mockData },
   ];
 
   const handleClick = (index: number, resume: ResumeData) => {
