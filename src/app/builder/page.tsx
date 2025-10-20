@@ -1,7 +1,7 @@
 import { PrintPdfBtn } from "@/components/buttons/PrintPdfBtn";
 import ColorPicker from "@/components/ColorPicker";
-import { FormHeading } from "@/components/form/FormHeading";
-import { ResumeForm } from "@/components/form/ResumeForm";
+import { ResumeForm } from "@/components/resume/ResumeForm";
+import { ResumeHeading } from "@/components/resume/ResumeHeading";
 import TemplateSelector from "@/components/TemplateSelector";
 import TemplateShowcase from "@/components/TemplateShowcase";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -28,7 +28,7 @@ export default function Page() {
           <PrintPdfBtn />
           <TemplateSelector />
           <div className="mt-5">
-            <FormHeading
+            <ResumeHeading
               heading={"Theme"}
               icon={<CiPalette />}
               showMore={false}

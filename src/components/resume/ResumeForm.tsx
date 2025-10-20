@@ -1,13 +1,13 @@
 import { GoPerson } from "react-icons/go";
-import { FormHeading } from "./FormHeading";
-import { ResumeField } from "./ResumeField";
+import { ResumeField } from "../inputs/ResumeField";
+import { ResumeHeading } from "./ResumeHeading";
 import { ResumeSections } from "./ResumeSections";
 
 export function ResumeForm() {
   return (
     <div>
       <div className="basics">
-        <FormHeading heading="Basics" icon={<GoPerson />} showMore={false} />
+        <ResumeHeading heading="Basics" icon={<GoPerson />} showMore={false} />
         <ResumeField label="Full Name" placeholder="Enter name" field="name" />
         <ResumeField
           label="Title"

@@ -4,7 +4,7 @@ import { useUpdateResume } from "@/hooks/useUpdateResume";
 import { ResumeData } from "@/lib/resume-types";
 import { BsTextParagraph } from "react-icons/bs";
 import TiptapEditor from "../editor/TiptapEditor";
-import { FormHeading } from "./FormHeading";
+import { ResumeHeading } from "../resume/ResumeHeading";
 
 export default function FormTextArea({
   field,
@@ -17,7 +17,7 @@ export default function FormTextArea({
 
   return (
     <div className="summary">
-      <FormHeading heading="Summary" icon={<BsTextParagraph />} />
+      <ResumeHeading heading="Summary" icon={<BsTextParagraph />} />
       <TiptapEditor
         content={content}
         onContentChange={(content: string) => handleChange(content)}

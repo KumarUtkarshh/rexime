@@ -11,7 +11,7 @@ import { useAtom, useSetAtom } from "jotai";
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { GrTemplate } from "react-icons/gr";
-import { FormHeading } from "./form/FormHeading";
+import { ResumeHeading } from "./resume/ResumeHeading";
 
 function ResumeImage({
   src,
@@ -55,7 +55,7 @@ export default function TemplateSelector() {
 
   return (
     <div>
-      <FormHeading
+      <ResumeHeading
         heading={"Templates"}
         icon={<GrTemplate />}
         showMore={false}

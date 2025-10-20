@@ -8,9 +8,9 @@ import AddNewItemDialog from "../dialogs/AddNewItemDialog";
 import ItemTileDialog from "../dialogs/ItemTileDialog";
 import SkillDialog from "../dialogs/SkillDialog";
 import TiptapEditor from "../editor/TiptapEditor";
-import { FormHeading } from "./FormHeading";
+import { ResumeHeading } from "./ResumeHeading";
 
-export function FormPlaceHolderSection({
+export function ResumeSection({
   heading,
   icon,
   entries,
@@ -33,7 +33,7 @@ export function FormPlaceHolderSection({
 
   return (
     <div>
-      <FormHeading heading={heading} icon={icon} />
+      <ResumeHeading heading={heading} icon={icon} />
 
       {(isEditorOpen && id == "skills") || id == "achievements" ? (
         <TiptapEditor
@@ -47,8 +47,9 @@ export function FormPlaceHolderSection({
           {id == "skills"
             ? entries.map((entry, key) => (
                 <div key={key}>
-                  {entry.fields?.map((entryFields) => (
+                  {entry.fields?.map((entryFields, index) => (
                     <ItemTileDialog
+                      index={index}
                       entry={entry}
                       entryFields={entryFields}
                       key={key}
@@ -57,10 +58,11 @@ export function FormPlaceHolderSection({
                   ))}
                 </div>
               ))
-            : entries.map((entry, key) => (
+            : entries.map((entry, index) => (
                 <ItemTileDialog
+                  index={index}
                   entry={entry}
-                  key={key}
+                  key={index}
                   id={heading.toLowerCase()}
                 />
               ))}

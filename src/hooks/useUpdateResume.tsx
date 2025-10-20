@@ -1,5 +1,5 @@
 import { resumeAtom } from "@/app/store";
-import { ResumeData, ResumeSection } from "@/lib/resume-types";
+import { ResumeData, ResumeEntry, ResumeSection } from "@/lib/resume-types";
 import { useAtom } from "jotai";
 import React from "react";
 
@@ -39,21 +39,23 @@ export const useUpdateResume = (field?: keyof ResumeData) => {
     });
   };
 
-  // Update a field inside a specific section item
+  // Updates a single item in a single section
   const updateSectionItem = (
     sectionId: string,
     itemIndex: number,
-    key: keyof any,
-    value: any
+    updates: Partial<ResumeEntry>
   ) => {
     setResumeData((prev) => {
       const updatedSections = (prev.sections ?? []).map((section) => {
-        if (section.id !== sectionId) return section;
+        if (section.id !== sectionId) return section; // skip other sections
+
         const updatedItems = section.items.map((item, idx) =>
-          idx === itemIndex ? { ...item, [key]: value } : item
+          idx === itemIndex ? { ...item, ...updates } : item
         );
+
         return { ...section, items: updatedItems };
       });
+
       return { ...prev, sections: updatedSections };
     });
   };

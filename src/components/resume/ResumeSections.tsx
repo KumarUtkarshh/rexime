@@ -1,4 +1,5 @@
 "use client";
+
 import { resumeAtom } from "@/app/store";
 import { useAtomValue } from "jotai";
 import React from "react";
@@ -8,8 +9,8 @@ import { GrProjects } from "react-icons/gr";
 import { MdAssuredWorkload, MdWorkOutline } from "react-icons/md";
 import { PiCertificateLight } from "react-icons/pi";
 import { SiHyperskill } from "react-icons/si";
-import { FormPlaceHolderSection } from "./FormPlaceHolderSection";
-import FormTextArea from "./FormTextArea";
+import FormTextArea from "../text/ResumeTextArea";
+import { ResumeSection } from "./ResumeSection";
 
 export function ResumeSections() {
   const resumeData = useAtomValue(resumeAtom);
@@ -32,7 +33,7 @@ export function ResumeSections() {
       <hr className="mt-7 mb-4" />
       {resumeData.sections &&
         resumeData.sections.map((section, key) => (
-          <FormPlaceHolderSection
+          <ResumeSection
             key={key}
             heading={section.title}
             entries={section.items}

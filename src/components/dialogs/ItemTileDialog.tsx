@@ -8,52 +8,19 @@ import {
 import { sectionData } from "@/lib/constants";
 import { ResumeEntry, ResumeField } from "@/lib/resume-types";
 import { AiOutlineHolder } from "react-icons/ai";
-import { RiQuestionLine } from "react-icons/ri";
-import { SaveChangesBtn } from "../buttons/SaveChangesBtn";
-import TiptapEditor from "../editor/TiptapEditor";
-import { Field, FieldControl, FieldLabel } from "../ui/field";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import DialogForm from "../form/DialogForm";
 import { SkillDialogContent } from "./SkillDialog";
-
-function DialogField({
-  label,
-  placeholder,
-  value,
-  optional = false,
-}: {
-  label: string;
-  placeholder: string;
-  value: string | undefined;
-  optional?: boolean;
-}) {
-  return (
-    <Field className="w-full">
-      <div className="flex items-center gap-2">
-        <FieldLabel>{label}</FieldLabel>
-        {optional && (
-          <Tooltip>
-            <TooltipTrigger className="text-gray-300 text-xs">
-              <RiQuestionLine />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Optional field</p>
-            </TooltipContent>
-          </Tooltip>
-        )}
-      </div>
-      <FieldControl placeholder={placeholder} value={value} />
-    </Field>
-  );
-}
 
 export default function ItemTileDialog({
   entry,
   id,
   entryFields,
+  index,
 }: {
   entry: ResumeEntry;
   id: string;
   entryFields?: ResumeField;
+  index: number;
 }) {
   let data = sectionData[id];
   if (data == undefined) data = sectionData["experience"];
@@ -79,39 +46,7 @@ export default function ItemTileDialog({
         {id == "skills" ? (
           <SkillDialogContent />
         ) : (
-          <div>
-            <div className="flex gap-2">
-              <DialogField
-                label={data.title1}
-                placeholder={data.placeholder1}
-                value={entry.title}
-              />
-              <DialogField
-                label={data.title2}
-                placeholder={data.placeholder2}
-                value={entry.subtitle}
-              />
-            </div>
-            <div className="flex gap-2">
-              <DialogField
-                label={data.title3}
-                placeholder={data.placeholder3}
-                value={entry.meta}
-              />
-              <DialogField
-                optional
-                label={data.title4}
-                placeholder={data.placeholder4}
-                value={id == "education" ? entry.gpa : entry.website}
-              />
-            </div>
-            <div className="text-sm my-2">Description</div>
-            <TiptapEditor
-              onContentChange={(content: string) => {}}
-              content={entry.editorHTML}
-            />
-            <SaveChangesBtn />
-          </div>
+          <DialogForm data={data} entry={entry} id={id} index={index} />
         )}
       </DialogContent>
     </Dialog>

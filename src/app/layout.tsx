@@ -1,12 +1,13 @@
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
+import { Provider } from "jotai";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { geistSans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mind Mapping Tool - Organize Ideas Smarter",
+  title: "Rexime",
   description:
     "Create, edit, and visualize mind maps with ease. No data stored on our servers.",
   keywords: ["mind mapping", "visual thinking", "productivity", "AI mind map"],
@@ -49,16 +50,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} antialiased selection:bg-white/40 not-dark:selection:bg-black/55`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster position="top-center" richColors />
-        </ThemeProvider>
-        <Analytics />
+        <Provider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster position="top-center" richColors />
+          </ThemeProvider>
+          <Analytics />
+        </Provider>
       </body>
     </html>
   );

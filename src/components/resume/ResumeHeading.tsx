@@ -2,7 +2,7 @@
 
 import FormHeadingMoreBtn from "../buttons/FormHeadingMoreBtn";
 
-export function FormHeading({
+export function ResumeHeading({
   heading,
   icon,
   showMore = true,
