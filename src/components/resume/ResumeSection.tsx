@@ -1,9 +1,7 @@
 "use client";
 
-import { openCustomEditorAtom } from "@/app/store";
 import { useUpdateResume } from "@/hooks/useUpdateResume";
 import { ResumeEntry } from "@/lib/resume-types";
-import { useAtom } from "jotai";
 import * as React from "react";
 import AddNewItemDialog from "../dialogs/AddNewItemDialog";
 import ItemTileDialog from "../dialogs/ItemTileDialog";
@@ -20,26 +18,18 @@ export function ResumeSection({
   icon: React.ReactElement;
   entries: ResumeEntry[];
 }) {
-  const [isEditorOpen, setIsEditorOpen] = useAtom(openCustomEditorAtom);
   const id = heading.toLowerCase();
   const { updateSectionItem } = useUpdateResume();
 
-  React.useEffect(() => {
-    if (
-      id == "skills" &&
-      entries.some((val) => val.fields == undefined || val.fields.length == 0)
-    ) {
-      setIsEditorOpen(true);
-    } else {
-      setIsEditorOpen(false);
-    }
-  }, [id, entries, setIsEditorOpen]);
+  const shouldEditorpen =
+    id === "skills" &&
+    entries.some((val) => !val.fields || val.fields.length === 0);
 
   return (
     <div>
       <ResumeHeading heading={heading} icon={icon} />
 
-      {(isEditorOpen && id == "skills") || id == "achievements" ? (
+      {(shouldEditorpen && id == "skills") || id == "achievements" ? (
         <TiptapEditor
           onContentChange={(content) =>
             updateSectionItem(id, 0, { editorHTML: content })
