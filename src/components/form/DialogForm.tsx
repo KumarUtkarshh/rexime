@@ -20,22 +20,25 @@ export default function DialogForm({
   index?: number;
 }) {
   const [editorHtml, seteditorHtml] = useState("");
-  const { updateSectionItem } = useUpdateResume();
+  const { updateSectionItem, addSectionItem } = useUpdateResume();
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
+    const entry = {
+      title: formData.get("title")?.toString(),
+      subtitle: formData.get("subtitle")?.toString(),
+      meta: formData.get("meta")?.toString(),
+      gpa: formData.get("gpa")?.toString(),
+      website: formData.get("website")?.toString(),
+      location: formData.get("location")?.toString(),
+      editorHTML: editorHtml,
+    };
 
     if (index) {
-      updateSectionItem(id, index, {
-        title: formData.get("title")?.toString(),
-        subtitle: formData.get("subtitle")?.toString(),
-        meta: formData.get("meta")?.toString(),
-        gpa: formData.get("gpa")?.toString(),
-        website: formData.get("website")?.toString(),
-        location: formData.get("location")?.toString(),
-        editorHTML: editorHtml,
-      });
+      updateSectionItem(id, index, entry);
+    } else {
+      addSectionItem(id, entry);
     }
   };
 

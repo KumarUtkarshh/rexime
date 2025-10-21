@@ -28,7 +28,7 @@ export const useUpdateResume = (field?: keyof ResumeData) => {
   };
 
   // Add an item (ResumeEntry) to a specific section by id
-  const addSectionItem = (sectionId: string, newItem: any) => {
+  const addSectionItem = (sectionId: string, newItem: ResumeEntry) => {
     setResumeData((prev) => {
       const updatedSections = (prev.sections ?? []).map((section) =>
         section.id === sectionId
