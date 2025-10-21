@@ -17,7 +17,8 @@ export const sampleData: ResumeData = {
         {
           title: "Bachelor of Technology in Computer Science",
           subtitle: "Indian Institute of Technology (IIT) Bombay",
-          meta: "Aug 2018 – May 2022 | Mumbai, India",
+          meta: "Aug 2018 – May 2022",
+          location: "Mumbai, India",
           gpa: "8.26 GPA",
           editorHTML:
             "<ul><li>Graduated with distinction, majoring in Computer Science.</li><li>Led a student team in building a cloud-hosted IoT data analysis platform.</li></ul>",
@@ -34,14 +35,16 @@ export const sampleData: ResumeData = {
         {
           title: "Software Development Engineer - I",
           subtitle: "Amazon India",
-          meta: "July 2022 – Present | Bangalore, India",
+          meta: "July 2022 – Present",
+          location: "Bangalore, India",
           editorHTML:
             "<ul><li>Developed a microservices-based order tracking system, improving latency by 30%.</li><li>Implemented DynamoDB and Redis caching to reduce database queries by 40%.</li></ul>",
         },
         {
           title: "Software Engineer Intern",
           subtitle: "Amazon India",
-          meta: "Jan 2022 – June 2022 | Hyderabad, India",
+          meta: "Jan 2022 – June 2022",
+          location: "Hyderabad, India",
           editorHTML:
             "<ul><li>Built an automated anomaly detection tool using Python and AWS, reducing manual checks by 60%.</li><li>Developed an internal debugging dashboard for the supply chain team, reducing incident resolution time.</li></ul>",
         },
@@ -56,7 +59,7 @@ export const sampleData: ResumeData = {
         {
           title: "Scalable URL Shortener",
           meta: "Oct 2021 – Jan 2022",
-          website: "www.xyz.com",
+          website: "https://urlshortener.com",
           fields: [
             {
               label: "Tech Stack",
@@ -69,7 +72,7 @@ export const sampleData: ResumeData = {
         {
           title: "AI-Powered Resume Parser",
           meta: "July 2021 – Sep 2021",
-          website: "www.xyz.com",
+          website: "https://resumeparser.com",
           fields: [
             {
               label: "Tech Stack",
@@ -202,7 +205,7 @@ export const sampleDataTimeLine: ResumeData = {
   linkedin: "linkedin.com/in/johnatanc",
   location: "Austin, TX",
   summary:
-    "I am experience manager who enjoys tackling big challenges in fulfillment, manufacturing and customer service. I take pride in my ability to build high performing and engaged teams with a passion to win. Manufacturing & logistics are in my blood. For almost a decade I have been at the forefront of many manufacturing transformations as an ambitious operations leader, Lean Six Sigma strategist and functional operator.",
+    "<p>I am experience manager who enjoys tackling big challenges in fulfillment, manufacturing and customer service. I take pride in my ability to build high performing and engaged teams with a passion to win. Manufacturing & logistics are in my blood. For almost a decade I have been at the forefront of many manufacturing transformations as an ambitious operations leader, Lean Six Sigma strategist and functional operator.</p>",
   sections: [
     {
       id: "experience",
@@ -373,10 +376,10 @@ export const sectionData: Record<string, SectionFields> = {
     placeholder1: "Senior Developer",
     title2: "Company",
     placeholder2: "Company name",
-    title3: "More Information",
-    placeholder3: "Jan 2021 – Dec 2023 | Mountain View",
-    title4: "Website",
-    placeholder4: "www.xyz.com",
+    title3: "Date or Date Range",
+    placeholder3: "Jan 2021 – Dec 2023",
+    title4: "Location",
+    placeholder4: "Mountain View",
   },
 
   skills: {

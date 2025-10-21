@@ -123,7 +123,14 @@ export default function Resume({ data }: Props) {
                     )}
                   </div>
                   {item.meta && (
-                    <p className="text-sm text-gray-600">{item.meta}</p>
+                    <div className="flex">
+                      <p className="text-sm text-gray-600">{item.meta}</p>
+                      {item.location && (
+                        <p className="text-sm text-gray-600">
+                          &nbsp;|&nbsp;{item.location}
+                        </p>
+                      )}
+                    </div>
                   )}
                 </div>
 

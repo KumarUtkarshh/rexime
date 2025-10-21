@@ -6,20 +6,14 @@ import { BsTextParagraph } from "react-icons/bs";
 import TiptapEditor from "../editor/TiptapEditor";
 import { ResumeHeading } from "../resume/ResumeHeading";
 
-export default function FormTextArea({
-  field,
-  content,
-}: {
-  field: keyof ResumeData;
-  content: string | undefined;
-}) {
-  const { handleChange } = useUpdateResume(field);
+export default function FormTextArea({ field }: { field: keyof ResumeData }) {
+  const { handleChange, resumeData } = useUpdateResume(field);
 
   return (
     <div className="summary">
       <ResumeHeading heading="Summary" icon={<BsTextParagraph />} />
       <TiptapEditor
-        content={content}
+        content={resumeData.summary}
         onContentChange={(content: string) => handleChange(content)}
       />
     </div>
