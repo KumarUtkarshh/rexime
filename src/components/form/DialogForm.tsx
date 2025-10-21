@@ -8,6 +8,12 @@ import TiptapEditor from "../editor/TiptapEditor";
 import { DialogField } from "../inputs/DialogField";
 import { Form } from "../ui/form";
 
+function isEmptyObject(obj: Record<string, any>): boolean {
+  return Object.values(obj).every(
+    (val) => val === "" || val === undefined || val === null
+  );
+}
+
 export default function DialogForm({
   data,
   entry,
@@ -35,9 +41,11 @@ export default function DialogForm({
       editorHTML: editorHtml,
     };
 
-    if (index) {
+    if (index != undefined) {
       updateSectionItem(id, index, entry);
     } else {
+      if (isEmptyObject(entry)) return;
+      console.log(entry);
       addSectionItem(id, entry);
     }
   };
