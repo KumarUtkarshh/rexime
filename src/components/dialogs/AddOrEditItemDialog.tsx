@@ -10,6 +10,8 @@ import {
 import { sectionData } from "@/lib/constants";
 import { ResumeEntry, ResumeField } from "@/lib/resume-types";
 import { AiOutlineHolder } from "react-icons/ai";
+import { SiReaddotcv } from "react-icons/si";
+import { VscEdit } from "react-icons/vsc";
 import DialogForm from "../form/DialogForm";
 import { SkillDialogContent } from "./SkillDialog";
 
@@ -33,6 +35,7 @@ export default function AddOrEditItemDialog({
       <DialogTrigger asChild>
         {isCreateMode ? (
           <Button variant="outline" className="w-full p-6">
+            <SiReaddotcv />
             Add a new item
           </Button>
         ) : (
@@ -55,7 +58,18 @@ export default function AddOrEditItemDialog({
       <DialogContent
         className={`gap-2 ${id == "skills" ? "sm:w-[500px]" : ""}`}
       >
-        <DialogTitle>{isCreateMode ? "New Item" : "Update Item"}</DialogTitle>
+        <DialogTitle>
+          {isCreateMode ? (
+            <div className="flex gap-2">
+              <SiReaddotcv />
+              New Item
+            </div>
+          ) : (
+            <div className="flex gap-2">
+              <VscEdit /> Update Item
+            </div>
+          )}
+        </DialogTitle>
         {id == "skills" ? (
           <SkillDialogContent />
         ) : (
