@@ -138,6 +138,7 @@ const EducationEntry = ({ item }: { item: ResumeEntry }) => (
       )}
     </div>
     {item.meta && <p className="text-xs italic text-gray-600">{item.meta}</p>}
+    {item.gpa && <p className="text-xs italic text-gray-600">{item.gpa}</p>}
   </div>
 );
 
