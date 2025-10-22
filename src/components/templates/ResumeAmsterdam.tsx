@@ -15,7 +15,17 @@ const DetailItem = ({ label, value }: { label: string; value?: string }) => (
     <h4 className="text-xs font-bold uppercase text-gray-600 tracking-wider">
       {label}
     </h4>
-    <div className="text-gray-700 text-xs">{value}</div>
+    {label == "Address" || label == "Phone" ? (
+      <div className="text-gray-700 text-xs">{value}</div>
+    ) : (
+      <a
+        href={label == "Email" ? `mailto:${value}` : value}
+        target="_blank"
+        className="text-gray-700 text-xs text-wrap"
+      >
+        {value}
+      </a>
+    )}
   </div>
 );
 
@@ -97,7 +107,18 @@ const EducationEntry = ({ item }: { item: ResumeEntry }) => (
 // -------------------------------------------------
 
 export const ResumeAmsterdam = ({ data }: { data: ResumeData }) => {
-  const { name, title, summary, phone, email, location, sections } = data;
+  const {
+    name,
+    title,
+    summary,
+    phone,
+    email,
+    website,
+    github,
+    linkedin,
+    location,
+    sections,
+  } = data;
 
   const skillsSection = sections?.find((s) => s.id === "skills");
   const employmentSection = sections?.find((s) => s.id === "experience");
@@ -135,6 +156,9 @@ export const ResumeAmsterdam = ({ data }: { data: ResumeData }) => {
             {location && <DetailItem label="Address" value={location} />}
             {phone && <DetailItem label="Phone" value={phone} />}
             {email && <DetailItem label="Email" value={email} />}
+            {website && <DetailItem label="Website" value={website} />}
+            {github && <DetailItem label="Github" value={github} />}
+            {linkedin && <DetailItem label="Linkedin" value={linkedin} />}
           </div>
 
           {/* Skills Section */}

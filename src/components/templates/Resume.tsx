@@ -37,6 +37,7 @@ export default function Resume({ data }: Props) {
           {data.linkedin && (
             <a
               href={data.linkedin}
+              target="_blank"
               className="hover:underline flex items-center gap-2"
             >
               <FaLinkedin /> {data.linkedin}
@@ -45,6 +46,7 @@ export default function Resume({ data }: Props) {
           {data.github && (
             <a
               href={data.github}
+              target="_blank"
               className="hover:underline flex items-center gap-2"
             >
               <FaGithub /> {data.github}
@@ -53,6 +55,7 @@ export default function Resume({ data }: Props) {
           {data.website && (
             <a
               href={data.website}
+              target="_blank"
               className="hover:underline flex items-center gap-2"
             >
               <FaLink /> {data.website}
@@ -108,9 +111,13 @@ export default function Resume({ data }: Props) {
                           <span>
                             {" "}
                             |{" "}
-                            <span className="text-gray-700 underline">
+                            <a
+                              href={item.website}
+                              target="_blank"
+                              className="text-gray-700 underline"
+                            >
                               {item.website}
-                            </span>
+                            </a>
                           </span>
                         )}
                       </p>

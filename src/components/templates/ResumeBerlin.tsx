@@ -178,6 +178,14 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
                 <p>{data.email}</p>
               </div>
             )}
+            {data.website && (
+              <div>
+                <h3 className="font-bold uppercase text-xs mb-1">Portfolio</h3>
+                <a target="_blank" href={data.website}>
+                  {data.website}
+                </a>
+              </div>
+            )}
             {data.nationality && (
               <div>
                 <h3 className="font-bold uppercase text-xs mb-1">

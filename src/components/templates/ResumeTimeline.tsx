@@ -3,6 +3,7 @@ import { BsFillDiamondFill } from "react-icons/bs";
 import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import TiptapHTML from "../editor/TiptapHTML";
+import { email } from "zod";
 
 /// -------------------------------------------------
 // 2. ICON COMPONENTS (Inline SVGs, no libraries)
@@ -162,7 +163,7 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
           {email && (
             <div className="flex items-center gap-2">
               <FaEnvelope className="w-4 h-4 text-gray-600" />
-              <span>{email}</span>
+              <a href={`mailto:${email}`}>{email}</a>
             </div>
           )}
           {location && (
@@ -174,7 +175,9 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
           {linkedin && (
             <div className="flex items-center gap-2">
               <FaLinkedin className="w-4 h-4 text-gray-600" />
-              <span>{linkedin}</span>
+              <a href={linkedin} target="_blank">
+                {linkedin}
+              </a>
             </div>
           )}
         </div>
