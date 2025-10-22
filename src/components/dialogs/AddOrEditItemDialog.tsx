@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { sectionData } from "@/lib/constants";
 import { ResumeEntry, ResumeField } from "@/lib/resume-types";
+import { isDiffDialog } from "@/lib/utils";
 import { AiOutlineHolder } from "react-icons/ai";
 import { SiReaddotcv } from "react-icons/si";
 import { VscEdit } from "react-icons/vsc";
@@ -56,7 +57,7 @@ export default function AddOrEditItemDialog({
         )}
       </DialogTrigger>
       <DialogContent
-        className={`gap-2 ${id == "skills" ? "sm:w-[500px]" : ""}`}
+        className={`gap-2 ${isDiffDialog(id) ? "sm:w-[500px]" : ""}`}
       >
         <DialogTitle>
           {isCreateMode ? (
@@ -70,7 +71,7 @@ export default function AddOrEditItemDialog({
             </div>
           )}
         </DialogTitle>
-        {id == "skills" && entryFields ? (
+        {isDiffDialog(id) && entryFields ? (
           <SkillDialogForm skill={entryFields} entryIndex={index} />
         ) : (
           <DialogForm data={data} entry={entry} id={id} index={index} />

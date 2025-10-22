@@ -141,6 +141,17 @@ const RightColumnSection: FC<{ section: ResumeSection }> = ({ section }) => (
 );
 
 export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
+  const skillsSection = data.sections?.find(
+    (section) => section.id === "skills"
+  );
+
+  const skillFields = skillsSection?.items?.[0]?.fields ?? [];
+  const langsection = data.sections?.find(
+    (section) => section.id === "languages"
+  );
+
+  const langFields = langsection?.items?.[0]?.fields ?? [];
+
   return (
     <div className="bg-white font-sans text-gray-900 flex shadow-lg">
       {/* Left Column */}
@@ -212,26 +223,40 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
             )} */}
           </div>
         </LeftColumnSection>
-        {data.skillsBerlin && (
+        {skillFields.length > 0 && (
           <LeftColumnSection title="SKILLS">
             <ul className="space-y-3">
-              {data.skillsBerlin.map((skill) => (
-                <li key={skill} className="text-sm font-medium">
-                  {skill}
-                  <div className="h-[3px] bg-gray-300 mt-1.5 w-full"></div>
+              {skillFields.map((field, idx) => (
+                <li key={idx} className="text-sm font-medium">
+                  {field.label}
+                  <div className="h-[3px] bg-gray-300 mt-1.5 w-full relative">
+                    <div
+                      className="h-[3px] bg-black absolute top-0 left-0"
+                      style={{
+                        width: `${(Number(field.value) / 4) * 100}%`, // adjust max value if needed
+                      }}
+                    />
+                  </div>
                 </li>
               ))}
             </ul>
           </LeftColumnSection>
         )}
 
-        {data.languages && (
+        {langFields.length > 0 && (
           <LeftColumnSection title="LANGUAGES">
             <ul className="space-y-3">
-              {data.languages.map((lang) => (
-                <li key={lang} className="text-sm font-medium">
-                  {lang}
-                  <div className="h-[3px] bg-gray-300 mt-1.5 w-3/4"></div>
+              {langFields.map((field, idx) => (
+                <li key={idx} className="text-sm font-medium">
+                  {field.label}
+                  <div className="h-[3px] bg-gray-300 mt-1.5 w-full relative">
+                    <div
+                      className="h-[3px] bg-black absolute top-0 left-0"
+                      style={{
+                        width: `${(Number(field.value) / 4) * 100}%`, // adjust max value if needed
+                      }}
+                    />
+                  </div>
                 </li>
               ))}
             </ul>

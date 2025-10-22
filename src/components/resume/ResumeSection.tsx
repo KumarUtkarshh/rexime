@@ -3,6 +3,7 @@
 import { openCustomEditorAtom } from "@/app/store";
 import { useUpdateResume } from "@/hooks/useUpdateResume";
 import { ResumeEntry } from "@/lib/resume-types";
+import { isDiffDialog } from "@/lib/utils";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 import AddOrEditItemDialog from "../dialogs/AddOrEditItemDialog";
@@ -28,7 +29,6 @@ export function ResumeSection({
     if (id === "skills") {
       const shouldOpen = (entries[0].editorHTML?.length ?? 0) > 0;
       setIsEditorOpen(shouldOpen);
-      console.log(shouldOpen, id);
     }
   }, [id]);
 
@@ -36,7 +36,7 @@ export function ResumeSection({
     <div>
       <ResumeHeading heading={heading} icon={icon} />
 
-      {(isEditorOpen && id == "skills") || id == "achievements" ? (
+      {(isEditorOpen && id === "skills") || id === "achievements" ? (
         <TiptapEditor
           onContentChange={(content) =>
             updateSectionItem(id, 0, { editorHTML: content })
@@ -45,7 +45,7 @@ export function ResumeSection({
         />
       ) : (
         <div>
-          {id == "skills"
+          {isDiffDialog(id)
             ? entries.map((entry, key) => (
                 <div key={key}>
                   {entry.fields?.map((entryFields, index) => (
@@ -68,7 +68,7 @@ export function ResumeSection({
                 />
               ))}
           <div className="mb-5"></div>
-          {id == "skills" ? <SkillDialog /> : <AddOrEditItemDialog id={id} />}
+          {isDiffDialog(id) ? <SkillDialog /> : <AddOrEditItemDialog id={id} />}
         </div>
       )}
 

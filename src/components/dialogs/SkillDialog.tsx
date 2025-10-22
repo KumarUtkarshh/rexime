@@ -5,8 +5,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Field, FieldControl, FieldLabel } from "../ui/field";
+import { SiReaddotcv } from "react-icons/si";
 import { SkillDialogForm } from "../form/SkillDialogForm";
+import { Field, FieldControl, FieldLabel } from "../ui/field";
 
 export function DialogField({
   label,
@@ -32,6 +33,7 @@ export default function SkillDialog() {
     <Dialog>
       <DialogTrigger className="w-full" asChild>
         <Button variant="outline" className="w-full p-6">
+          <SiReaddotcv />
           Add a new item
         </Button>
       </DialogTrigger>

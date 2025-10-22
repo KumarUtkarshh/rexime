@@ -10,3 +10,6 @@ export function isEmptyObject(obj: Record<string, any>): boolean {
     (val) => val === "" || val === "0" || val === undefined || val === null
   );
 }
+
+export const isDiffDialog = (id: string) =>
+  id === "skills" || id === "languages" || id == "achievements";

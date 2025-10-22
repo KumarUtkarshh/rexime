@@ -30,20 +30,29 @@ const DetailItem = ({ label, value }: { label: string; value?: string }) => (
 );
 
 const SkillEntry = ({ item }: { item: ResumeEntry }) => {
-  const level = parseInt(item.meta || "0", 10);
+  const fields = item.fields ?? [];
+
   return (
     <div className="mb-2">
-      <p className="text-sm text-gray-800">{item.title}</p>
-      <div className="flex mt-1">
-        {[...Array(5)].map((_, i) => (
-          <span
-            key={i}
-            className={`w-2.5 h-2.5 rounded-full mr-1 ${
-              i < level ? "bg-black" : "bg-gray-300"
-            }`}
-          ></span>
-        ))}
-      </div>
+      {fields.map((field, idx) => {
+        const level = parseInt(field.value || "0", 10);
+
+        return (
+          <div key={idx} className="mb-2">
+            <p className="text-sm text-gray-800">{field.label}</p>
+            <div className="flex mt-1">
+              {[...Array(5)].map((_, i) => (
+                <span
+                  key={i}
+                  className={`w-2.5 h-2.5 rounded-full mr-1 ${
+                    i <= level ? "bg-black" : "bg-gray-300"
+                  }`}
+                ></span>
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -183,6 +183,24 @@ export const mockBerlinData: ResumeData = {
         },
       ],
     },
+    {
+      id: "languages",
+      title: "LANGUAGES",
+      items: [
+        {
+          fields: [
+            {
+              label: "English",
+              value: "3",
+            },
+            {
+              label: "French",
+              value: "3",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 
@@ -287,11 +305,15 @@ export const sampleDataAmsterDam: ResumeData = {
       id: "skills",
       title: "Skills",
       items: [
-        { title: "Project Management Skills", meta: "4" },
-        { title: "Business Development Strategy", meta: "5" },
-        { title: "Industry Knowledge", meta: "3" },
-        { title: "Interpersonal Communication Skills", meta: "5" },
-        { title: "Innovative Problem Solving", meta: "4" },
+        {
+          fields: [
+            { label: "Project Management Skills", value: "4" },
+            { label: "Business Development Strategy", value: "5" },
+            { label: "Industry Knowledge", value: "3" },
+            { label: "Interpersonal Communication Skills", value: "5" },
+            { label: "Innovative Problem Solving", value: "4" },
+          ],
+        },
       ],
     },
     {
