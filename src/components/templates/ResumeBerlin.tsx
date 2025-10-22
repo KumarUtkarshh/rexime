@@ -175,7 +175,7 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
             {data.email && (
               <div>
                 <h3 className="font-bold uppercase text-xs mb-1">Email</h3>
-                <p>{data.email}</p>
+                <a href={`mailto:${data.email}`}>{data.email}</a>
               </div>
             )}
             {data.website && (
@@ -186,14 +186,30 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
                 </a>
               </div>
             )}
-            {data.nationality && (
+            {data.linkedin && (
+              <div>
+                <h3 className="font-bold uppercase text-xs mb-1">Linkedin</h3>
+                <a target="_blank" href={data.linkedin}>
+                  {data.linkedin}
+                </a>
+              </div>
+            )}
+            {data.github && (
+              <div>
+                <h3 className="font-bold uppercase text-xs mb-1">Github</h3>
+                <a target="_blank" href={data.github}>
+                  {data.github}
+                </a>
+              </div>
+            )}
+            {/* {data.nationality && (
               <div>
                 <h3 className="font-bold uppercase text-xs mb-1">
                   Nationality
                 </h3>
                 <p>{data.nationality}</p>
               </div>
-            )}
+            )} */}
           </div>
         </LeftColumnSection>
         {data.skillsBerlin && (
