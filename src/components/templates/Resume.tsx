@@ -9,10 +9,9 @@ import TiptapHTML from "../editor/TiptapHTML";
 type Props = { data: ResumeData; font: string | null };
 
 export default function Resume({ data, font }: Props) {
-  console.log(font);
   return (
     <div
-      className={`bg-white text-black max-w-4xl mx-auto p-10 text-[13px] ${
+      className={`bg-white max-xl:w-[690px] text-black max-w-4xl mx-auto p-10 text-[13px] ${
         font ? font : "font-serif"
       }`}
     >
@@ -103,15 +102,6 @@ export default function Resume({ data, font }: Props) {
                     {item.title && (
                       <p className="font-semibold">
                         {item.title}
-                        {item.gpa && (
-                          <span>
-                            {" "}
-                            -{" "}
-                            <span className="text-gray-700 font-normal">
-                              {item.gpa}
-                            </span>
-                          </span>
-                        )}
                         {item.website && (
                           <span>
                             {" "}
@@ -130,6 +120,15 @@ export default function Resume({ data, font }: Props) {
                     {item.subtitle && (
                       <div className="italic text-xs text-gray-700">
                         {item.subtitle}
+                        {item.gpa && (
+                          <span>
+                            {" "}
+                            -{" "}
+                            <span className="text-gray-700 font-normal">
+                              {item.gpa}
+                            </span>
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>

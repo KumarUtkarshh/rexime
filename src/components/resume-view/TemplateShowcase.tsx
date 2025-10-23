@@ -29,23 +29,25 @@ export default function TemplateShowcase() {
   };
 
   return (
-    <TransformWrapper
-      initialScale={1}
-      minScale={0.2}
-      maxScale={3}
-      centerOnInit={true}
-      limitToBounds={false}
-    >
-      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-        <div className="relative">
-          <ResumeControlBar pdfRef={pdfRef} />
-          <div ref={pdfRef}>
-            <TransformComponent>
-              {resumes[resumeShowCaseIdx]}
-            </TransformComponent>
+    <div>
+      <TransformWrapper
+        initialScale={1}
+        minScale={0.2}
+        maxScale={3}
+        centerOnInit={true}
+        limitToBounds={false}
+      >
+        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+          <div className="relative">
+            <ResumeControlBar pdfRef={pdfRef} />
+            <div ref={pdfRef}>
+              <TransformComponent>
+                {resumes[resumeShowCaseIdx]}
+              </TransformComponent>
+            </div>
           </div>
-        </div>
-      )}
-    </TransformWrapper>
+        )}
+      </TransformWrapper>
+    </div>
   );
 }

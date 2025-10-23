@@ -12,23 +12,52 @@ import { CiPalette } from "react-icons/ci";
 import { GoTypography } from "react-icons/go";
 
 export default function Page() {
+  // --- RESPONSIVE BREAKPOINTS ---
+  // Adjust these values to match your design system.
+  // These can be 'sm', 'md', 'lg', 'xl', '2xl', or custom breakpoints
+  // from your tailwind.config.js file.
+  const tabletBreakpoint = "md"; // The point where the left panel appears
+  const desktopBreakpoint = "xl"; // The point where the right panel appears
+
   return (
-    <div className="flex h-screen w-full overflow-hidden max-[1230px]:bg-red-100">
-      {/* LEFT SECTION — Scrollable form */}
-      <aside className="w-[30%] border-r">
-        <ScrollArea className="h-full px-6 py-3">
+    <div className="flex h-screen w-full overflow-hidden">
+      {/* LEFT SECTION */}
+      <aside
+        className={`
+          border-r
+          transition-all duration-300 ease-in-out
+          w-0 overflow-hidden
+          ${tabletBreakpoint}:w-[30%] ${desktopBreakpoint}:w-[30%]
+          flex-shrink-0
+        `}
+      >
+        {/* Padding is now also responsive */}
+        <ScrollArea
+          className={`h-full ${tabletBreakpoint}:px-6 ${tabletBreakpoint}:py-3`}
+        >
           <ResumeForm />
         </ScrollArea>
       </aside>
 
-      {/* MIDDLE SECTION — Resume preview */}
-      <main className="w-2/4 h-full m-0 p-0 block" id="resume-section">
+      {/* MIDDLE SECTION */}
+      <main className="h-full w-full block flex-1" id="resume-section">
         <TemplateShowcase />
       </main>
 
-      {/* RIGHT SECTION — Scrollable color + template picker */}
-      <aside className="w-1/4 border-l">
-        <ScrollArea className="h-full px-4 py-3">
+      {/* RIGHT SECTION */}
+      <aside
+        className={`
+          border-l
+          transition-all duration-300 ease-in-out
+          w-0 overflow-hidden
+          ${desktopBreakpoint}:w-1/4
+          flex-shrink-0
+        `}
+      >
+        {/* Padding is now also responsive */}
+        <ScrollArea
+          className={`h-full ${desktopBreakpoint}:px-4 ${desktopBreakpoint}:py-3`}
+        >
           <TemplateSelector />
           <div className="mt-5" />
           <ResumeHeading

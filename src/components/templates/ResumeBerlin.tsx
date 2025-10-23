@@ -66,7 +66,7 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
   const resumeColor = useAtomValue(resumeColorAtom);
 
   return (
-    <div className="bg-white font-sans text-gray-900 flex shadow-lg">
+    <div className="bg-white max-xl:w-[690px] font-sans text-gray-900 flex shadow-lg">
       {/* Left Column */}
       <aside className={`w-[36%] ${resumeColor} p-8`}>
         <header className="mb-12">
