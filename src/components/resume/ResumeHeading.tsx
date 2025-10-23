@@ -6,9 +6,11 @@ export function ResumeHeading({
   heading,
   icon,
   showMore = true,
+  extraBtn,
 }: {
   heading: string;
   icon: React.ReactElement;
+  extraBtn?: React.ReactElement;
   showMore?: boolean;
 }) {
   return (
@@ -18,6 +20,7 @@ export function ResumeHeading({
         <h1 className="text-3xl font-semibold">{heading}</h1>
       </div>
       {showMore && <FormHeadingMoreBtn />}
+      {extraBtn}
     </div>
   );
 }

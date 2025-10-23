@@ -6,3 +6,4 @@ export const openSignUpDialogAtom = atom(false);
 export const openCustomEditorAtom = atom(false);
 export const resumeAtom = atom<ResumeData>(sampleData);
 export const resumeShowCaseIdxAtom = atom<number>(0);
+export const selectedFontAtom = atom<string | null>(null);

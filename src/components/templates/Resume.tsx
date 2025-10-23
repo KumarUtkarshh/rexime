@@ -6,11 +6,16 @@ import { FaLink } from "react-icons/fa6";
 import { MdLocationOn } from "react-icons/md";
 import TiptapHTML from "../editor/TiptapHTML";
 
-type Props = { data: ResumeData };
+type Props = { data: ResumeData; font: string | null };
 
-export default function Resume({ data }: Props) {
+export default function Resume({ data, font }: Props) {
+  console.log(font);
   return (
-    <div className="bg-white text-black max-w-4xl mx-auto p-10 text-[13px] font-serif">
+    <div
+      className={`bg-white text-black max-w-4xl mx-auto p-10 text-[13px] ${
+        font ? font : "font-serif"
+      }`}
+    >
       {/* ---------------- Header ---------------- */}
       <header className="text-center border-b border-gray-400 pb-2 mb-4">
         <h1 className="text-3xl font-bold tracking-wide">{data.name}</h1>

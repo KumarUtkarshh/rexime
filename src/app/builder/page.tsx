@@ -1,3 +1,4 @@
+import FontResetBtn from "@/components/buttons/FontResetBtn";
 import ColorPicker from "@/components/ColorPicker";
 import FontSelection from "@/components/FontSelection";
 import TemplateShowcase from "@/components/resume-view/TemplateShowcase";
@@ -31,6 +32,7 @@ export default function Page() {
               heading={"Typography"}
               icon={<CiPalette />}
               showMore={false}
+              extraBtn={<FontResetBtn />}
             />
             <FontSelection />
           </div>

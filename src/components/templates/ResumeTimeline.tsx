@@ -3,7 +3,6 @@ import { BsFillDiamondFill } from "react-icons/bs";
 import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import TiptapHTML from "../editor/TiptapHTML";
-import { email } from "zod";
 
 /// -------------------------------------------------
 // 2. ICON COMPONENTS (Inline SVGs, no libraries)
