@@ -26,8 +26,8 @@ export default function Page() {
         className={`
           border-r
           transition-all duration-300 ease-in-out
-          w-0 overflow-hidden
-          ${tabletBreakpoint}:w-[30%] ${desktopBreakpoint}:w-[30%]
+          w-0 md:w-[400px] overflow-hidden
+          ${desktopBreakpoint}:w-[30%]
           flex-shrink-0
         `}
       >
@@ -50,14 +50,12 @@ export default function Page() {
           border-l
           transition-all duration-300 ease-in-out
           w-0 overflow-hidden
-          ${desktopBreakpoint}:w-1/4
+          xl:w-[24%]
           flex-shrink-0
         `}
       >
         {/* Padding is now also responsive */}
-        <ScrollArea
-          className={`h-full ${desktopBreakpoint}:px-4 ${desktopBreakpoint}:py-3`}
-        >
+        <ScrollArea className={`h-full px-4 py-3`}>
           <TemplateSelector />
           <div className="mt-5" />
           <ResumeHeading
