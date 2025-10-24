@@ -117,7 +117,13 @@ const EducationEntry = ({ item }: { item: ResumeEntry }) => (
 // 4. MAIN RESUME COMPONENT (Absolute Header Layout)
 // -------------------------------------------------
 
-export const ResumeAmsterdam = ({ data }: { data: ResumeData }) => {
+export const ResumeAmsterdam = ({
+  data,
+  font,
+}: {
+  data: ResumeData;
+  font: string | null;
+}) => {
   const {
     name,
     title,
@@ -138,7 +144,11 @@ export const ResumeAmsterdam = ({ data }: { data: ResumeData }) => {
 
   return (
     // 1. Main wrapper must be 'relative' to contain the absolute header
-    <div className="relative max-w-4xl mx-auto bg-white shadow-lg font-sans">
+    <div
+      className={`relative max-xl:w-[690px] max-w-4xl mx-auto bg-white shadow-lg ${
+        font ? font : "font-sans"
+      }`}
+    >
       {/* 2. Header is 'absolute', centered, and 'z-10' to sit on top */}
       <header className="absolute top-0 left-0 right-0 z-10 flex justify-center pt-6">
         {/* This box has a white background to match the image */}

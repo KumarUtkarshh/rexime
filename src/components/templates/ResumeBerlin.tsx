@@ -52,7 +52,13 @@ const RightColumnSection: FC<{ section: ResumeSection }> = ({ section }) => (
   </section>
 );
 
-export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
+export const ResumeBerlin = ({
+  data,
+  font,
+}: {
+  data: ResumeData;
+  font: string | null;
+}) => {
   const skillsSection = data.sections?.find(
     (section) => section.id === "skills"
   );
@@ -66,7 +72,11 @@ export const ResumeBerlin = ({ data }: { data: ResumeData }) => {
   const resumeColor = useAtomValue(resumeColorAtom);
 
   return (
-    <div className="bg-white max-xl:w-[690px] font-sans text-gray-900 flex shadow-lg">
+    <div
+      className={`bg-white max-xl:w-[690px] text-gray-900 flex ${
+        font ? font : "font-sans"
+      } shadow-lg`}
+    >
       {/* Left Column */}
       <aside className={`w-[36%] ${resumeColor} p-8`}>
         <header className="mb-12">

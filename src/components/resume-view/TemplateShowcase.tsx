@@ -23,9 +23,9 @@ export default function TemplateShowcase() {
 
   const resumes: Record<number, React.ReactElement> = {
     0: <Resume data={data} font={font} />,
-    1: <ResumeBerlin data={data} />,
-    2: <ResumeTimeLine data={data} />,
-    3: <ResumeAmsterdam data={data} />,
+    1: <ResumeBerlin data={data} font={font} />,
+    2: <ResumeTimeLine data={data} font={font} />,
+    3: <ResumeAmsterdam data={data} font={font} />,
   };
 
   return (

@@ -121,7 +121,13 @@ const AchievementItem = ({ item }: { item: ResumeEntry }) => (
 // 4. MAIN RESUME COMPONENT
 // -------------------------------------------------
 
-export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
+export const ResumeTimeLine = ({
+  data,
+  font,
+}: {
+  data: ResumeData;
+  font: string | null;
+}) => {
   const { name, title, summary, phone, email, linkedin, location, sections } =
     data;
 
@@ -139,7 +145,11 @@ export const ResumeTimeLine = ({ data }: { data: ResumeData }) => {
     // We use A4-like proportions for printing,
     // (w-[210mm] h-[297mm]) but max-w-4xl is better for web.
     // Use `font-sans` as a good default.
-    <div className="max-w-4xl mx-auto p-10 bg-white shadow-lg font-sans text-gray-900">
+    <div
+      className={`max-w-4xl max-xl:w-[690px] mx-auto p-10 bg-white shadow-lg ${
+        font ? font : "font-sans"
+      } text-gray-900`}
+    >
       {/* --- HEADER --- */}
       <header>
         {name && (
