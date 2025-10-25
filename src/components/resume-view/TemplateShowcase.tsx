@@ -38,7 +38,7 @@ export default function TemplateShowcase() {
         limitToBounds={false}
       >
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-          <div className="relative">
+          <div className="relative grid place-content-center">
             <ResumeControlBar pdfRef={pdfRef} />
             <TransformComponent>
               {resumes[resumeShowCaseIdx]}
