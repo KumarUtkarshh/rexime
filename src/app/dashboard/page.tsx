@@ -1,4 +1,5 @@
-import { TiltCard } from "@/components/cards/ResumeCard";
+import ResumeCard from "@/components/cards/ResumeCard";
+import { TiltCard } from "@/components/cards/TiltCard";
 import NashBarDash from "@/components/navbar/NavBarDash";
 import { IoAddOutline } from "react-icons/io5";
 import { ibmplexmono } from "../fonts";
@@ -28,13 +29,8 @@ export default function Page() {
             </p>
           </div>
         </TiltCard>
-        <TiltCard imageUrl="/resume-simple.png">
-          <h1
-            className={`text-center text-xl font-semibold ${ibmplexmono.className}`}
-          >
-            Google
-          </h1>
-        </TiltCard>
+
+        <ResumeCard />
       </div>
     </div>
   );
