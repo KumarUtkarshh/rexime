@@ -123,7 +123,7 @@ export function TiltCard({
       >
         {/* Adds a dark overlay if an image is used, for text readability */}
         {imageUrl && (
-          <div className="absolute inset-0 bg-black/50 rounded-2xl z-0"></div>
+          <div className="absolute inset-0 dark:bg-black/50 bg-white/50 border rounded-2xl z-0"></div>
         )}
 
         {/* Content wrapper, pushed further forward for a parallax effect */}

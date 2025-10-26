@@ -1,6 +1,7 @@
 "use client";
 
 import { ibmplexmono } from "@/app/fonts";
+import Link from "next/link";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import { VscEdit } from "react-icons/vsc";
 import {
@@ -31,10 +32,12 @@ export default function ResumeCard() {
         sideOffset={-100}
         alignOffset={-45}
       >
-        <DropdownMenuItem>
-          <VscEdit size={16} className="opacity-60" aria-hidden="true" />
-          Edit Resume
-        </DropdownMenuItem>
+        <Link href="/builder">
+          <DropdownMenuItem>
+            <VscEdit size={16} className="opacity-60" aria-hidden="true" />
+            Edit Resume
+          </DropdownMenuItem>
+        </Link>
 
         <DropdownMenuItem>
           <VscEdit size={16} className="opacity-60" aria-hidden="true" />
