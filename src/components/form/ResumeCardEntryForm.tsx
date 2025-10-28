@@ -1,12 +1,14 @@
 "use client";
 
 import { createResume } from "@/lib/supabase/createResume";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { SaveChangesBtn } from "../buttons/SaveChangesBtn";
 import { DialogField } from "../inputs/DialogField";
 import { Form } from "../ui/form";
 
 export function ResumeCardEntryForm() {
+  const router = useRouter();
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
@@ -17,7 +19,9 @@ export function ResumeCardEntryForm() {
         data: null,
       };
 
-      await createResume(resume.title ?? "Resume", resume.data);
+      await createResume(resume.title ?? "Resume", resume.data).then(() =>
+        router.refresh()
+      );
     } catch (error) {
       toast.error((error as Error).message);
     }

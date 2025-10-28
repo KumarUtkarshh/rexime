@@ -1,3 +1,5 @@
+import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
+
 export type ResumeField = {
   label: string; // e.g. "Company", "Duration", "Role"
   value?: string; // The value like "Google", "2021–2023"
@@ -51,4 +53,12 @@ export type SectionFields = {
 export type ResumeCardDetails = {
   name: string;
   data: string;
+};
+
+export type Resume = {
+  id: string;
+  title: string;
+  user_id: string;
+  data: string;
+  created_at: Timestamp;
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { ibmplexmono } from "@/app/fonts";
+import { Resume } from "@/lib/resume-types";
 import Link from "next/link";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import { VscEdit } from "react-icons/vsc";
@@ -12,16 +13,16 @@ import {
 } from "../ui/dropdown-menu";
 import { TiltCard } from "./TiltCard";
 
-export default function ResumeCard() {
+export default function ResumeCard({ resume }: { resume: Resume }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div>
           <TiltCard imageUrl="/resume-simple.png">
             <h1
-              className={`text-center text-xl font-semibold ${ibmplexmono.className}`}
+              className={`text-center text-3xl font-semibold ${ibmplexmono.className}`}
             >
-              Google
+              {resume.title}
             </h1>
           </TiltCard>
         </div>
