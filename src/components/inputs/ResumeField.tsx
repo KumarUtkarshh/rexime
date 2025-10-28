@@ -25,7 +25,7 @@ export function ResumeField({
     <Field>
       <FieldLabel>{label}</FieldLabel>
       <FieldControl
-        value={resumeData[field]?.toString()}
+        value={resumeData[field]?.toString() ?? ""}
         onChange={handleChange}
         placeholder={placeholder}
         disabled={disabled}

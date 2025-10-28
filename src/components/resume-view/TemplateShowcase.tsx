@@ -1,11 +1,9 @@
 "use client";
 
-import {
-  resumeAtom,
-  resumeShowCaseIdxAtom,
-  selectedFontAtom,
-} from "@/app/store";
+import { resumeShowCaseIdxAtom, selectedFontAtom } from "@/app/store";
+import { useResumeSync } from "@/hooks/useResumeSync";
 import { useAtomValue } from "jotai";
+import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import Resume from "../templates/Resume";
@@ -15,7 +13,10 @@ import { ResumeTimeLine } from "../templates/ResumeTimeline";
 import { ResumeControlBar } from "./ResumeControlBar";
 
 export default function TemplateShowcase() {
-  const data = useAtomValue(resumeAtom);
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+
+  const { resumeData: data } = useResumeSync(id ?? "");
   const font = useAtomValue(selectedFontAtom);
 
   const resumeShowCaseIdx = useAtomValue(resumeShowCaseIdxAtom);

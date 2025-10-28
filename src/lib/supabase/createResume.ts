@@ -2,7 +2,11 @@ import { createClient } from "../client";
 import { ResumeData } from "../resume-types";
 import { getUser } from "./getUserClient";
 
-export const createResume = async (title: string, data: ResumeData | null) => {
+export const createResume = async (
+  title: string,
+  data: ResumeData | null,
+  image: string
+) => {
   const user = await getUser();
 
   if (!user) throw new Error("User not logged in");
@@ -15,6 +19,7 @@ export const createResume = async (title: string, data: ResumeData | null) => {
         user_id: user.id,
         title: title,
         data: data ?? null,
+        image: image,
       },
     ])
     .single();

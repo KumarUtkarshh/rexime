@@ -50,7 +50,7 @@ export default function TemplateSelector() {
 
   const handleClick = (index: number, resume: ResumeData) => {
     setIdx(index);
-    setResume(resume);
+    // setResume(resume);
   };
 
   return (

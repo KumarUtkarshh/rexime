@@ -19,9 +19,11 @@ export function ResumeCardEntryForm() {
         data: null,
       };
 
-      await createResume(resume.title ?? "Resume", resume.data).then(() =>
-        router.refresh()
-      );
+      await createResume(
+        resume.title ?? "Resume",
+        resume.data,
+        "/resume-simple.png"
+      ).then(() => router.refresh());
     } catch (error) {
       toast.error((error as Error).message);
     }

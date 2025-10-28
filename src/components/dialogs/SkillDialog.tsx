@@ -8,25 +8,6 @@ import {
 import { SiReaddotcv } from "react-icons/si";
 import { SkillDialogForm } from "../form/SkillDialogForm";
 
-// export function DialogField({
-//   label,
-//   placeholder,
-//   value,
-//   name,
-// }: {
-//   label: string;
-//   placeholder: string;
-//   value?: string;
-//   name: string;
-// }) {
-//   return (
-//     <Field name={name} className="w-full">
-//       <FieldLabel>{label}</FieldLabel>
-//       <FieldControl placeholder={placeholder} value={value} />
-//     </Field>
-//   );
-// }
-
 export default function SkillDialog() {
   return (
     <Dialog>

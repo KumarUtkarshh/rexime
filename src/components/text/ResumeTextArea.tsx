@@ -13,7 +13,7 @@ export default function FormTextArea({ field }: { field: keyof ResumeData }) {
     <div className="summary">
       <ResumeHeading heading="Summary" icon={<BsTextParagraph />} />
       <TiptapEditor
-        content={resumeData.summary}
+        content={resumeData.summary ?? ""}
         onContentChange={(content: string) => handleChange(content)}
       />
     </div>
