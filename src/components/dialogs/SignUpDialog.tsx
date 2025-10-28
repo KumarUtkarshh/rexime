@@ -15,14 +15,20 @@ import { useAtom } from "jotai";
 import Link from "next/link";
 import SignInWithGoogleBtn from "../buttons/SignInWithGoogleBtn";
 
-export default function Component({ withTrigger = true }) {
+export default function Component({
+  withTrigger = true,
+  customBtn,
+}: {
+  withTrigger?: boolean;
+  customBtn?: React.ReactElement;
+}) {
   const [openSignUpDialog, setopenSignUpDialog] = useAtom(openSignUpDialogAtom);
 
   return (
     <Dialog open={openSignUpDialog} onOpenChange={setopenSignUpDialog}>
       {withTrigger && (
         <DialogTrigger asChild>
-          <Button variant="default">Sign In</Button>
+          {customBtn ?? <Button variant="default">Sign In</Button>}
         </DialogTrigger>
       )}
       <DialogContent className="w-md">

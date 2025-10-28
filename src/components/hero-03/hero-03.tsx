@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Link from "next/link";
+import GetStartedOrDashBtn from "./GetStartedOrDashBtn";
 
 const Hero03 = () => {
   return (
@@ -26,15 +27,11 @@ const Hero03 = () => {
           interviews at top tech companies like Google, Amazon, and beyond.
         </p>
         <div className="mt-10 flex items-center justify-center gap-4 pointer-events-auto">
-          <Link href="/dashboard">
-            <Button size="lg" className="rounded-full text-base">
-              Get Started <ArrowUpRight className="h-5! w-5!" />
-            </Button>
-          </Link>
+          <GetStartedOrDashBtn />
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full py-2 bg-transparent backdrop-blur-2xl text-base shadow-none"
+            className="rounded-full p-6 bg-transparent backdrop-blur-2xl text-base shadow-none"
           >
             <CirclePlay className="h-5! w-5!" /> Watch Demo
           </Button>
