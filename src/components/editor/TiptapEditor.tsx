@@ -34,7 +34,7 @@ const TiptapEditor = ({
       TextStyle,
       Color,
     ],
-    content: content,
+    content: content ?? "",
     editorProps: {
       attributes: {
         class: "tiptap-editor", // Use the class from globals.css
@@ -46,7 +46,7 @@ const TiptapEditor = ({
 
     immediatelyRender: false,
   });
-
+  if (!editor) return null; // Prevent render before init
   return (
     <div className="text-white">
       <Toolbar editor={editor} />

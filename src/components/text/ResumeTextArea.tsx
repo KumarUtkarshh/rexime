@@ -1,19 +1,19 @@
 "use client";
 
 import { useUpdateResume } from "@/hooks/useUpdateResume";
-import { ResumeData } from "@/lib/resume-types";
 import { BsTextParagraph } from "react-icons/bs";
 import TiptapEditor from "../editor/TiptapEditor";
 import { ResumeHeading } from "../resume/ResumeHeading";
 
-export default function FormTextArea({ field }: { field: keyof ResumeData }) {
-  const { handleChange, resumeData } = useUpdateResume(field);
+export default function FormTextArea({ content }: { content: string }) {
+  const { handleChange } = useUpdateResume("summary");
 
+  console.log(content);
   return (
     <div className="summary">
       <ResumeHeading heading="Summary" icon={<BsTextParagraph />} />
       <TiptapEditor
-        content={resumeData.summary ?? ""}
+        content={content ?? ""}
         onContentChange={(content: string) => handleChange(content)}
       />
     </div>

@@ -29,7 +29,7 @@ export function ResumeSections() {
   return (
     <div>
       <hr className="mt-5" />
-      <FormTextArea field="summary" />
+      <FormTextArea content={resumeData.summary ?? ""} />
       <hr className="mt-7 mb-4" />
       {resumeData.sections &&
         resumeData.sections.map((section, key) => (

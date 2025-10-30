@@ -5,15 +5,21 @@ import FontSelection from "@/components/FontSelection";
 import TemplateShowcase from "@/components/resume-view/TemplateShowcase";
 import { ResumeForm } from "@/components/resume/ResumeForm";
 import { ResumeHeading } from "@/components/resume/ResumeHeading";
+import ResumeProvider from "@/components/ResumeProvider";
 import TemplateSelector from "@/components/TemplateSelector";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { BiDonateHeart } from "react-icons/bi";
 import { CiPalette } from "react-icons/ci";
 import { GoTypography } from "react-icons/go";
 
-export default function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   return (
     <div className="flex h-screen w-full overflow-hidden">
+      <ResumeProvider />
       {/* LEFT SECTION */}
       <aside
         className={`
