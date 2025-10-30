@@ -14,12 +14,13 @@ import React from "react";
 import { BiDonateHeart } from "react-icons/bi";
 import { CiPalette } from "react-icons/ci";
 import { GoTypography } from "react-icons/go";
+import LoadingPage from "../LoadingPage";
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = React.use(params);
   const { resumeData, isLoading } = useResumeSync(id);
 
-  if (isLoading || !resumeData) return <div>load</div>;
+  if (isLoading || !resumeData) return <LoadingPage />;
 
   return (
     <div className="flex h-screen w-full overflow-hidden">
