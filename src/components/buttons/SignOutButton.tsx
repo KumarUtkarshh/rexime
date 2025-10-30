@@ -7,6 +7,7 @@ import { DropdownMenuItem } from "../ui/dropdown-menu";
 export function SignOutButton() {
   return (
     <DropdownMenuItem
+      variant="destructive"
       className="text-destructive cursor-pointer"
       onClick={() => {
         try {
