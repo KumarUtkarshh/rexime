@@ -29,7 +29,7 @@ export default function ResumeCard({ resume }: { resume: Resume }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div>
-          <TiltCard imageUrl="/resume-simple.png">
+          <TiltCard imageUrl={resume.image}>
             <h1
               className={`text-center text-3xl font-semibold ${ibmplexmono.className}`}
             >

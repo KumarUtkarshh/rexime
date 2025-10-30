@@ -58,7 +58,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
       >
         {/* Padding is now also responsive */}
         <ScrollArea className={`h-full px-4 py-3`}>
-          <TemplateSelector />
+          <TemplateSelector id={id} />
           <div className="mt-5" />
           <ResumeHeading
             heading={"Typography"}

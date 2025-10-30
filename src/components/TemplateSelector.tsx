@@ -1,5 +1,5 @@
 "use client";
-import { resumeAtom, resumeShowCaseIdxAtom } from "@/app/store";
+import { resumeShowCaseIdxAtom } from "@/app/store";
 import {
   mockBerlinData,
   sampleData,
@@ -7,7 +7,8 @@ import {
   sampleDataTimeLine,
 } from "@/lib/constants";
 import { ResumeData } from "@/lib/resume-types";
-import { useAtom, useSetAtom } from "jotai";
+import { updateResume } from "@/lib/supabase/createResume";
+import { useAtom } from "jotai";
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { GrTemplate } from "react-icons/gr";
@@ -38,9 +39,8 @@ function ResumeImage({
   );
 }
 
-export default function TemplateSelector() {
+export default function TemplateSelector({ id }: { id: string }) {
   const [index, setIdx] = useAtom(resumeShowCaseIdxAtom);
-  const setResume = useSetAtom(resumeAtom);
   const images = [
     { imagePath: "/resume-simple.png", defaultResume: sampleData },
     { imagePath: "/resume-berlin.jpg", defaultResume: mockBerlinData },
@@ -48,9 +48,12 @@ export default function TemplateSelector() {
     { imagePath: "/resume-amsterdam.jpg", defaultResume: sampleDataAmsterDam },
   ];
 
-  const handleClick = (index: number, resume: ResumeData) => {
+  const handleClick = async (index: number, resume: ResumeData) => {
     setIdx(index);
     // setResume(resume);
+    await updateResume(id, {
+      image: images[index].imagePath,
+    });
   };
 
   return (
@@ -67,7 +70,7 @@ export default function TemplateSelector() {
             key={key}
             src={data.imagePath}
             alt={data.imagePath.slice(1)}
-            onClick={() => handleClick(key, data.defaultResume)}
+            onClick={async () => await handleClick(key, data.defaultResume)}
           />
         ))}
       </div>

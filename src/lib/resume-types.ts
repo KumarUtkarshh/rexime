@@ -63,3 +63,9 @@ export type Resume = {
   data: ResumeData | null;
   created_at: Timestamp;
 };
+
+export type ResumeUpdateFields = {
+  title?: string;
+  data?: ResumeData | null;
+  image?: string;
+};
