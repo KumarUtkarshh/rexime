@@ -29,7 +29,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
         className={`
           border-r
           transition-all duration-300 ease-in-out
-          w-0 md:w-[200px] overflow-hidden
+          w-0 md:w-[400px] overflow-hidden
           xl:w-[30%]
           shrink-0
         `}
@@ -41,7 +41,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
       </aside>
 
       {/* MIDDLE SECTION */}
-      <main className="w-[46%] overflow-hidden">
+      <main className="w-[46%] max-sm:w-full md:w-full overflow-hidden">
         <TemplateShowcase />
       </main>
 
@@ -51,7 +51,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
           border-l
           transition-all duration-300 ease-in-out
           w-0 overflow-hidden
-          md:w-[400px]
+          md:w-0
           xl:w-[24%]
           shrink-0
         `}
