@@ -3,7 +3,6 @@ import { useId } from "react";
 
 import { ibmplexmono } from "@/app/fonts";
 import { Input } from "@/components/ui/input";
-import ThemeToggleBtn from "../buttons/ThemeToggleBtn";
 import RightNavBarContent from "./RightNavBarContent";
 
 export default function NashBarDash() {
@@ -39,7 +38,7 @@ export default function NashBarDash() {
         {/* Right side */}
         <div className="flex flex-1 items-center justify-end gap-2">
           <RightNavBarContent />
-          <ThemeToggleBtn />
+          {/* <ThemeToggleBtn /> */}
         </div>
       </div>
     </header>

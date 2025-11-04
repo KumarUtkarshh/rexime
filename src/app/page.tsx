@@ -1,15 +1,18 @@
+import Banner from "@/components/Banner";
 import Faq from "@/components/faq";
 import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Hero03 from "@/components/hero-03/hero-03";
+import LiquidEther from "@/components/LiquidEther";
 import LogoCloudNew from "@/components/logos-07/LogoCloudNew";
 
 export default async function Home() {
   return (
     <div>
       <div className="h-screen w-full relative">
+        <Banner />
         <Hero03 />
-        {/* <LiquidEther
+        <LiquidEther
           colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
           mouseForce={20}
           cursorSize={100}
@@ -25,7 +28,7 @@ export default async function Home() {
           takeoverDuration={0.25}
           autoResumeDelay={3000}
           autoRampDuration={0.6}
-        /> */}
+        />
       </div>
       <LogoCloudNew />
       <Features />
