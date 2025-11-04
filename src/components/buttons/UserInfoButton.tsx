@@ -5,9 +5,7 @@ import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
@@ -44,16 +42,9 @@ export async function UserInfoButton() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-1">
-        <DropdownMenuLabel>Donation</DropdownMenuLabel>
-        <DropdownMenuGroup>
-          <DropdownMenuItem>Donate via GPay</DropdownMenuItem>
-          <Link href="/plans">
-            <DropdownMenuItem>
-              {/* <BoltIcon size={16} className="opacity-60" aria-hidden="true" /> */}
-              Donate via Dodo
-            </DropdownMenuItem>
-          </Link>
-        </DropdownMenuGroup>
+        <Link href="/donation" target="_blank">
+          <DropdownMenuItem>Donate the Project</DropdownMenuItem>
+        </Link>
         <DropdownMenuSeparator />
         <SignOutButton />
       </DropdownMenuContent>

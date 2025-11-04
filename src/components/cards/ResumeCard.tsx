@@ -8,6 +8,7 @@ import { useSetAtom } from "jotai";
 import { useRouter } from "next/navigation";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import { VscEdit } from "react-icons/vsc";
+import { toast } from "sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +24,15 @@ export default function ResumeCard({ resume }: { resume: Resume }) {
   const handleResumeEdit = () => {
     setResume(resume.data ?? sampleData);
     router.push(`/builder/${resume.id}`);
+  };
+
+  const handleEditTitle = () => {
+    if (resume.id) {
+      toast.error("User id not found");
+    }
+    // updateResume(resume.id,{
+    //   title:''
+    // });
   };
 
   return (

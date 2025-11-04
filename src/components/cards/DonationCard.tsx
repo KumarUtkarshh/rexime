@@ -28,19 +28,12 @@ export default function DonationCard() {
             </p>
           </CardDescription>
         </CardHeader>
-        <div className="mt-5 flex justify-between">
-          <Button size="lg" className="w-full">
-            <a
-              href="upi://pay?pa=spryzenutkarsh@oksbi&pn=Kumar Utkarsh"
-              target="_blank"
-            >
-              Donate via Google Pay
-            </a>
-          </Button>
-        </div>
+
         <div className="mt-2 flex justify-between">
           <Button size="lg" className="w-full">
-            <Link href={"/plans"}>Donate via Dodo Payments</Link>
+            <Link href={"/donation"} target="_blank">
+              Donate the Project
+            </Link>
           </Button>
         </div>
       </div>
