@@ -6,7 +6,7 @@ import GetStartedOrDashBtn from "./GetStartedOrDashBtn";
 
 const Hero03 = () => {
   return (
-    <div className="min-h-screen inset-0 pointer-events-none z-10 absolute bg-transparent w-full flex flex-col gap-16 items-center justify-center px-6 py-16">
+    <div className="min-h-screen inset-0 md:pointer-events-none z-10 absolute bg-transparent w-full flex flex-col gap-16 items-center justify-center px-6 py-16">
       <div className="text-center max-w-3xl">
         <Badge
           variant="secondary"

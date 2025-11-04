@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaDonate } from "react-icons/fa";
 
 export default function Banner() {
@@ -13,9 +14,12 @@ export default function Banner() {
           Enjoying the resume builder? Your small donation helps us keep it
           fast, reliable, and free for everyone.{" "}
           <span className="text-muted-foreground">·</span>{" "}
-          <a href="#" className="font-medium underline hover:no-underline">
+          <Link
+            href="/donation"
+            className="font-medium underline hover:no-underline"
+          >
             Donate
-          </a>
+          </Link>
         </p>
       </div>
     </div>

@@ -10,8 +10,8 @@ const footerLinks = [
     href: "#features",
   },
   {
-    title: "Pricing",
-    href: "/plans",
+    title: "Donate",
+    href: "/donation",
   },
   {
     title: "Terms",
