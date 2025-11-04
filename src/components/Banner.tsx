@@ -2,8 +2,8 @@ import { FaDonate } from "react-icons/fa";
 
 export default function Banner() {
   return (
-    <div className="hidden md:block fixed top-4 left-1/2 -translate-x-1/2 z-50 w-fit px-4 pointer-events-none">
-      <div className="mx-auto bg-transparent backdrop-blur-3xl px-4 py-3 text-foreground rounded-xl pointer-events-auto">
+    <div className="hidden md:block relative z-50 w-full px-4 pointer-events-none">
+      <div className="absolute left-1/2 -translate-x-1/2 top-4 bg-transparent backdrop-blur-3xl px-4 py-3 text-foreground rounded-xl shadow-lg pointer-events-auto">
         <p className="text-center text-sm whitespace-nowrap overflow-hidden text-ellipsis">
           <FaDonate
             className="me-2 -mt-0.5 inline-flex opacity-60"
