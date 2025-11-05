@@ -8,6 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
+import { BsYoutube } from "react-icons/bs";
 import { Button } from "../ui/button";
 
 export default function YouTubeBtn() {
@@ -17,13 +18,19 @@ export default function YouTubeBtn() {
     <Dialog open={open} onOpenChange={setOpen}>
       {/* Trigger button in navbar */}
       <DialogTrigger asChild>
-        <Button className="">Watch Video</Button>
+        <Button
+          variant="outline"
+          size="lg"
+          className="rounded-full p-6 bg-transparent backdrop-blur-2xl text-base shadow-none"
+        >
+          <BsYoutube className="h-5! w-5!" /> Watch Demo
+        </Button>
       </DialogTrigger>
 
       {/* Dialog content */}
       <DialogContent className="sm:max-w-3xl p-0">
         <DialogHeader>
-          <DialogTitle className="px-4 pt-4">MinoMap AI Demo</DialogTitle>
+          <DialogTitle className="px-4 pt-4">Rexime Demo</DialogTitle>
         </DialogHeader>
 
         <div className="aspect-video w-full">

@@ -1,3 +1,5 @@
+import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
+
 export type ResumeField = {
   label: string; // e.g. "Company", "Duration", "Role"
   value?: string; // The value like "Google", "2021–2023"
@@ -46,4 +48,24 @@ export type SectionFields = {
   placeholder3: string;
   title4: string;
   placeholder4: string;
+};
+
+export type ResumeCardDetails = {
+  name: string;
+  data: string;
+};
+
+export type Resume = {
+  id: string;
+  title: string;
+  user_id: string;
+  image: string;
+  data: ResumeData | null;
+  created_at: Timestamp;
+};
+
+export type ResumeUpdateFields = {
+  title?: string;
+  data?: ResumeData | null;
+  image?: string;
 };

@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { FaHeart } from "react-icons/fa";
+import { Button } from "../ui/button";
+import { CardDescription, CardHeader, CardTitle } from "../ui/card";
 import SpotlightCard from "./SpotlightCard";
-import { Button } from "./ui/button";
-import { CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 export default function DonationCard() {
   return (
@@ -28,19 +28,12 @@ export default function DonationCard() {
             </p>
           </CardDescription>
         </CardHeader>
-        <div className="mt-5 flex justify-between">
-          <Button size="lg" className="w-full">
-            <a
-              href="upi://pay?pa=spryzenutkarsh@oksbi&pn=Kumar Utkarsh"
-              target="_blank"
-            >
-              Donate via Google Pay
-            </a>
-          </Button>
-        </div>
+
         <div className="mt-2 flex justify-between">
           <Button size="lg" className="w-full">
-            <Link href={"/plans"}>Donate via Dodo Payments</Link>
+            <Link href={"/donation"} target="_blank">
+              Donate the Project
+            </Link>
           </Button>
         </div>
       </div>

@@ -1,25 +1,25 @@
 "use client";
 
 import { signInWithGoogle } from "@/lib/actions";
-import { usePathname } from "next/navigation";
-import { toast } from "sonner";
 import { Button } from "../ui/button";
+import { toastManager } from "../ui/toast";
 
 export default function SignInWithGoogleBtn({
   isLogin = false,
 }: {
   isLogin?: boolean;
 }) {
-  const next = usePathname();
-
   return (
     <Button
       variant={isLogin ? "outline" : "default"}
       onClick={() => {
         try {
-          signInWithGoogle(next);
+          signInWithGoogle("/dashboard");
         } catch (error) {
-          toast.error((error as Error).message);
+          toastManager.add({
+            title: (error as Error).message,
+            type: "error",
+          });
         }
       }}
     >
