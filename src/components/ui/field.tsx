@@ -1,8 +1,7 @@
 "use client";
 
-import { Field as FieldPrimitive } from "@base-ui-components/react/field";
-
 import { cn } from "@/lib/utils";
+import { Field as FieldPrimitive } from "@base-ui-components/react/field";
 
 function Field({ className, ...props }: FieldPrimitive.Root.Props) {
   return (
@@ -39,14 +38,14 @@ function FieldControl({
     <span
       data-slot="field-control"
       className={cn(
-        "relative inline-flex w-full rounded-lg border border-input bg-background bg-clip-padding text-base/5 ring-ring/24 transition-[color,background-color,box-shadow,border-color] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-sm has-focus-visible:border-ring has-focus-visible:ring-[3px] has-disabled:opacity-64 has-disabled:before:shadow-none has-aria-invalid:border-destructive/36 has-aria-invalid:before:shadow-none has-focus-visible:has-aria-invalid:border-destructive/64 has-focus-visible:has-aria-invalid:ring-destructive/16 sm:text-sm dark:bg-input/32 dark:bg-clip-border dark:before:hidden dark:has-aria-invalid:ring-destructive/24",
+        "relative inline-flex w-full rounded-lg border border-input bg-background bg-clip-padding text-base/5 ring-ring transition-[color,background-color,box-shadow,border-color] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-sm has-focus-visible:border-ring has-focus-visible:ring-[1px] has-disabled:opacity-64 has-disabled:before:shadow-none has-aria-invalid:border-[oklch(0.577_0.245_27.325)] has-aria-invalid:before:shadow-none has-focus-visible:has-aria-invalid:border-[oklch(0.704_0.191_22.216)] has-focus-visible:has-aria-invalid:ring-[oklch(0.704_0.191_22.216)] sm:text-sm dark:bg-[oklch(0.20_0.005_52)] dark:bg-clip-border dark:before:hidden dark:has-aria-invalid:ring-[oklch(0.704_0.191_22.216)]",
         className
       )}
     >
       <FieldPrimitive.Control
         data-slot="field-control"
         className={cn(
-          "w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(3)-1px)] outline-none placeholder:text-muted-foreground/64",
+          "w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] py-[calc(--spacing(3)-1px)] outline-none placeholder:text-muted-foreground",
           size === "sm" &&
             "px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)]",
           size === "lg" && "py-[calc(--spacing(2)-1px)]",
