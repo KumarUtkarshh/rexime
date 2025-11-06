@@ -1,14 +1,32 @@
 # Contributing to Rexime
 
-Thank you for considering contributing! 🙌
+Thank you for thinking about contributing! Contributions are what make open-source great 🎉  
+This document will guide you through contributing efficiently and respectfully.
 
-## How to Contribute
+---
 
-1. **Fork** the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-name
-   ```
+## 📌 Before You Start
+
+- Make sure you have read and agree to the **Code of Conduct**.
+- Be respectful and constructive when communicating with maintainers and community members.
+
+---
+
+## 🧱 Project Structure
+
+Please take time to understand the directory layout before modifying code.
+
+---
+
+## 🔧 Development Setup
+
+```bash
+git clone https://github.com/your-username/rexime.git
+cd rexime
+pnpm install
+cp .env.example .env.local
+pnpm run dev
+```
 
 ---
 
