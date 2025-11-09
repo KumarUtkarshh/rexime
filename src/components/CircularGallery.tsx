@@ -1,4 +1,5 @@
 "use client";
+import { useMobile } from "@/hooks/useMobile";
 import {
   Camera,
   Mesh,
@@ -680,7 +681,7 @@ interface CircularGalleryProps {
 
 export default function CircularGallery({
   items,
-  bend = 3,
+  bend = 1,
   textColor = "#ffffff",
   borderRadius = 0.05,
   font = "bold 30px Figtree",
@@ -688,6 +689,8 @@ export default function CircularGallery({
   scrollEase = 0.05,
 }: CircularGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMobile();
+  bend = isMobile ? 1 : 3;
   useEffect(() => {
     if (!containerRef.current) return;
     const app = new App(containerRef.current, {

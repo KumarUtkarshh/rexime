@@ -32,9 +32,8 @@ export default async function Home() {
         />
       </div>
       <LogoCloudNew />
-      <div style={{ height: "600px", position: "relative" }} className="mb-64">
+      <div style={{ height: "600px", position: "relative" }} className="mb-52">
         <CircularGallery
-          bend={3}
           textColor="#ffffff"
           borderRadius={0.05}
           scrollEase={0.02}
