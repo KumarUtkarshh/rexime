@@ -15,74 +15,68 @@ import { ResumeData } from "@/lib/resume-types";
 import { ResumeTemplate } from "./ResumeTemplate";
 import { useState } from "react";
 import Resume from "../Resume/Resume";
+import { useAtom } from "jotai"; 
+import { resumeShowCaseIdxAtom } from "@/lib/store"; 
 
-type TemplateConfig = {
-  id: string;
-  name: string;
-  data: ResumeData;
-  component: (props: any) => JSX.Element;
-};
-
-// Array containing the configuration for the 8 original templates
-const templates: TemplateConfig[] = [
-  {
-    id: "standard",
-    name: "Classic Standard",
-    data: DUMMY_STANDARD_DATA,
-    component: Resume, 
+const images = [
+  { 
+    imagePath: "/resume-simple.png", 
+    defaultResume: DUMMY_STANDARD_DATA,
+    name: "Classic Standard", 
+    id: "standard", 
   },
-  {
-    id: "berlin",
-    name: "Berlin (Minimalist)",
-    data: DUMMY_BERLIN_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-berlin.jpg", 
+    defaultResume: DUMMY_BERLIN_DATA,
+    name: "Berlin (Minimalist)", 
+    id: "berlin", 
   },
-  {
-    id: "timeline",
-    name: "Timeline (Functional)",
-    data: DUMMY_TIMELINE_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-timeline.png", 
+    defaultResume: DUMMY_TIMELINE_DATA,
+    name: "Timeline (Functional)", 
+    id: "timeline", 
   },
-  {
-    id: "amsterdam",
-    name: "Amsterdam (Sales/BizOps)",
-    data: DUMMY_AMSTERDAM_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-amsterdam.jpg", 
+    defaultResume: DUMMY_AMSTERDAM_DATA,
+    name: "Amsterdam (Sales/BizOps)", 
+    id: "amsterdam", 
   },
-  {
-    id: "creative-professional",
-    name: "Creative Professional",
-    data: DUMMY_CREATIVE_PROFESSIONAL_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-creative-pro.png", 
+    defaultResume: DUMMY_CREATIVE_PROFESSIONAL_DATA,
+    name: "Creative Professional", 
+    id: "creative-professional", 
   },
-  {
-    id: "modern-corporate",
-    name: "Modern Corporate",
-    data: DUMMY_MODERN_CORPORATE_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-corporate.png", 
+    defaultResume: DUMMY_MODERN_CORPORATE_DATA,
+    name: "Modern Corporate", 
+    id: "modern-corporate", 
   },
-  {
-    id: "student-entry",
-    name: "Student/Entry Level",
-    data: DUMMY_STUDENT_ENTRY_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-student.png", 
+    defaultResume: DUMMY_STUDENT_ENTRY_DATA,
+    name: "Student/Entry Level", 
+    id: "student-entry", 
   },
-  {
-    id: "tech-oriented",
-    name: "Tech Oriented (Developer)",
-    data: DUMMY_TECH_ORIENTED_DATA,
-    component: Resume,
+  { 
+    imagePath: "/resume-tech.png", 
+    defaultResume: DUMMY_TECH_ORIENTED_DATA,
+    name: "Tech Oriented (Developer)", 
+    id: "tech-oriented", 
   },
 ];
 
 export default function TemplateSelector() {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(images[0].id); 
+  const [index, setIdx] = useAtom(resumeShowCaseIdxAtom); 
   const setResumeData = useResumeStore((state) => state.setResumeData);
 
-  const handleSelectTemplate = (templateData: ResumeData) => {
-    // 1. Update the global state with the new template's data
+  const handleSelectTemplate = (templateData: ResumeData, index: number) => {
     setResumeData(templateData);
-    // 2. Set the ID for visual selection feedback
+    setIdx(index); 
     setSelectedId(templateData.id || "standard"); 
   };
 
@@ -94,14 +88,14 @@ export default function TemplateSelector() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {templates.map((template) => (
+        {images.map((template, idx) => ( 
           <ResumeTemplate
             key={template.id}
             name={template.name}
-            data={template.data}
+            data={template.defaultResume}
             isSelected={selectedId === template.id}
-            onSelect={() => handleSelectTemplate(template.data)}
-            TemplateComponent={template.component} 
+            onSelect={() => handleSelectTemplate(template.defaultResume, idx)} 
+            TemplateComponent={Resume} 
           />
         ))}
       </div>
