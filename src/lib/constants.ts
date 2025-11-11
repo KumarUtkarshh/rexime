@@ -42,7 +42,6 @@ export const DUMMY_STANDARD_DATA: ResumeData = {
         },
       ],
     },
-
     {
       id: "experience",
       title: "Experience",
@@ -89,7 +88,6 @@ export const DUMMY_STANDARD_DATA: ResumeData = {
         },
       ],
     },
-
     {
       id: "achievements",
       title: "Achievements",
@@ -101,7 +99,6 @@ export const DUMMY_STANDARD_DATA: ResumeData = {
         },
       ],
     },
-
     {
       id: "skills",
       title: "Skills",
@@ -395,7 +392,7 @@ export const DUMMY_CREATIVE_PROFESSIONAL_DATA: ResumeData = {
   email: "jordan.michaels@design.com",
   location: "San Francisco, CA",
   linkedin: "linkedin.com/in/jordanmichaels",
-  github: null,
+  // REMOVED: github: null,
   website: "jordanmichaels.com/portfolio",
   summary:
     "Highly creative and results-driven UI/UX specialist with 8 years of experience leading design projects from concept through launch. Expertise in user research, high-fidelity prototyping, and maintaining large-scale design systems.",
@@ -437,22 +434,22 @@ export const DUMMY_CREATIVE_PROFESSIONAL_DATA: ResumeData = {
       items: [
         {
           title: "Software",
-          editorHTML: null,
+          // REMOVED: editorHTML: null,
           fields: [
             { label: "Figma", value: "Expert" },
             { label: "Sketch", value: "Advanced" },
             { label: "Adobe Suite", value: "Advanced" },
-            { label: "Maze/UserTesting", value: null },
+            { label: "Maze/UserTesting" /* REMOVED: , value: null */ },
           ],
         },
         {
           title: "Core Competencies",
-          editorHTML: null,
+          // REMOVED: editorHTML: null,
           fields: [
-            { label: "Prototyping", value: null },
-            { label: "Design Systems", value: null },
-            { label: "Information Architecture", value: null },
-            { label: "User Research", value: null },
+            { label: "Prototyping" /* REMOVED: , value: null */ },
+            { label: "Design Systems" /* REMOVED: , value: null */ },
+            { label: "Information Architecture" /* REMOVED: , value: null */ },
+            { label: "User Research" /* REMOVED: , value: null */ },
           ],
         },
       ],
@@ -468,8 +465,8 @@ export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
   email: "alexandra.vance@corp.net",
   location: "Chicago, IL",
   linkedin: "linkedin.com/in/alexandravance",
-  github: null,
-  website: null,
+  // REMOVED: github: null,
+  // REMOVED: website: null,
   summary:
     "Seasoned operations executive with 15 years of experience optimizing global business processes and leading high-stakes strategic initiatives. Proven ability to drive efficiency, manage complex budgets, and foster cross-functional collaboration at the executive level.",
   sections: [
@@ -508,7 +505,7 @@ export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
           meta: "2011",
           location: "Philadelphia, PA",
           gpa: "3.9/4.0",
-          editorHTML: null,
+          // REMOVED: editorHTML: null,
         },
       ],
     },
@@ -517,14 +514,14 @@ export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
         title: "Key Skills",
         items: [
             {
-                title: null,
-                editorHTML: null,
+                // REMOVED: title: null,
+                // REMOVED: editorHTML: null,
                 fields: [
-                    { label: "Financial Modeling", value: null },
-                    { label: "Strategic Planning", value: null },
-                    { label: "Process Optimization", value: null },
-                    { label: "Executive Leadership", value: null },
-                    { label: "SAP / Oracle", value: null },
+                    { label: "Financial Modeling" /* REMOVED: , value: null */ },
+                    { label: "Strategic Planning" /* REMOVED: , value: null */ },
+                    { label: "Process Optimization" /* REMOVED: , value: null */ },
+                    { label: "Executive Leadership" /* REMOVED: , value: null */ },
+                    { label: "SAP / Oracle" /* REMOVED: , value: null */ },
                 ]
             }
         ]
@@ -541,7 +538,7 @@ export const DUMMY_STUDENT_ENTRY_DATA: ResumeData = {
     location: "San Jose, CA",
     linkedin: "linkedin.com/in/mariarodriguez",
     github: "github.com/mariacodes",
-    website: null,
+    // REMOVED: website: null,
     summary:
       "Motivated Computer Science student with a strong foundation in data structures and algorithms, seeking a challenging internship to apply theoretical knowledge in a professional environment. Proven ability to quickly master new technologies.",
     sections: [
@@ -678,8 +675,8 @@ export const DUMMY_TECH_ORIENTED_DATA: ResumeData = {
             subtitle: "University of Washington",
             meta: "2020",
             location: "Seattle, WA",
-            gpa: null,
-            editorHTML: null,
+            // REMOVED: gpa: null,
+            // REMOVED: editorHTML: null,
           },
         ],
       },
@@ -689,23 +686,23 @@ export const DUMMY_TECH_ORIENTED_DATA: ResumeData = {
         items: [
           {
             title: "Backend",
-            editorHTML: null,
+            // REMOVED: editorHTML: null,
             fields: [
               { label: "Go", value: "Expert" },
               { label: "Node.js", value: "Advanced" },
               { label: "Python", value: "Advanced" },
-              { label: "PostgreSQL", value: null },
-              { label: "MongoDB", value: null },
+              { label: "PostgreSQL" /* REMOVED: , value: null */ },
+              { label: "MongoDB" /* REMOVED: , value: null */ },
             ],
           },
           {
             title: "Cloud & DevOps",
-            editorHTML: null,
+            // REMOVED: editorHTML: null,
             fields: [
-              { label: "Kubernetes", value: null },
+              { label: "Kubernetes" /* REMOVED: , value: null */ },
               { label: "AWS", value: "ECS/S3/Lambda" },
-              { label: "Docker", value: null },
-              { label: "Terraform", value: null },
+              { label: "Docker" /* REMOVED: , value: null */ },
+              { label: "Terraform" /* REMOVED: , value: null */ },
             ],
           },
         ],
@@ -729,9 +726,7 @@ export const sectionData: Record<string, SectionFields> = {
     title4: "Location",
     placeholder4: "Mountain View",
   },
-
-  // The 'research' section definition has been removed here.
-
+  
   skills: {
     title1: "Skill Category",
     placeholder1: "Languages",
@@ -809,3 +804,4 @@ export const sectionData: Record<string, SectionFields> = {
     placeholder4: "2022 – 2023",
   },
 };
+      
