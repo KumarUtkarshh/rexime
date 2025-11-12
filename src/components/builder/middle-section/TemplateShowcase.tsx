@@ -32,8 +32,8 @@ export default function TemplateShowcase() {
     3: <ResumeAmsterdam data={data} font={font} ref={pdfRef} />,
     4: <ResumeCreativeProfessional data={data} font={font} ref={pdfRef} />,
     5: <ResumeModernCorporate data={data} font={font} ref={pdfRef} />,
-    6: <ResumeTechOriented data={data} font={font} ref={pdfRef} />,
-    7: <ResumeStudentEntry data={data} font={font} ref={pdfRef} />,
+    6: <ResumeStudentEntry data={data} font={font} ref={pdfRef} />,
+    7: <ResumeTechOriented data={data} font={font} ref={pdfRef} />,
   };
 
   return (
