@@ -385,7 +385,6 @@ export const DUMMY_AMSTERDAM_DATA: ResumeData = {
 };
 
 export const DUMMY_CREATIVE_PROFESSIONAL_DATA: ResumeData = {
-  id: "creative-professional",
   name: "Jordan Michaels",
   title: "UI/UX Design Specialist",
   phone: "(555) 123-4567",
@@ -458,7 +457,6 @@ export const DUMMY_CREATIVE_PROFESSIONAL_DATA: ResumeData = {
 };
 
 export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
-  id: "modern-corporate",
   name: "Alexandra Vance",
   title: "Director of Business Operations",
   phone: "+1 (999) 765-4321",
@@ -510,206 +508,203 @@ export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
       ],
     },
     {
-        id: "skills",
-        title: "Key Skills",
-        items: [
-            {
-                // REMOVED: title: null,
-                // REMOVED: editorHTML: null,
-                fields: [
-                    { label: "Financial Modeling" /* REMOVED: , value: null */ },
-                    { label: "Strategic Planning" /* REMOVED: , value: null */ },
-                    { label: "Process Optimization" /* REMOVED: , value: null */ },
-                    { label: "Executive Leadership" /* REMOVED: , value: null */ },
-                    { label: "SAP / Oracle" /* REMOVED: , value: null */ },
-                ]
-            }
-        ]
-    }
+      id: "skills",
+      title: "Key Skills",
+      items: [
+        {
+          // REMOVED: title: null,
+          // REMOVED: editorHTML: null,
+          fields: [
+            { label: "Financial Modeling" /* REMOVED: , value: null */ },
+            { label: "Strategic Planning" /* REMOVED: , value: null */ },
+            { label: "Process Optimization" /* REMOVED: , value: null */ },
+            { label: "Executive Leadership" /* REMOVED: , value: null */ },
+            { label: "SAP / Oracle" /* REMOVED: , value: null */ },
+          ],
+        },
+      ],
+    },
   ],
 };
 
 export const DUMMY_STUDENT_ENTRY_DATA: ResumeData = {
-    id: "student-entry",
-    name: "Maria Rodriguez",
-    title: "Computer Science Undergraduate",
-    phone: "(408) 777-1001",
-    email: "mrodriguez@university.edu",
-    location: "San Jose, CA",
-    linkedin: "linkedin.com/in/mariarodriguez",
-    github: "github.com/mariacodes",
-    // REMOVED: website: null,
-    summary:
-      "Motivated Computer Science student with a strong foundation in data structures and algorithms, seeking a challenging internship to apply theoretical knowledge in a professional environment. Proven ability to quickly master new technologies.",
-    sections: [
-      {
-        id: "education",
-        title: "Education",
-        items: [
-          {
-            title: "B.S. in Computer Science",
-            subtitle: "San Jose State University",
-            meta: "Expected May 2026",
-            location: "San Jose, CA",
-            gpa: "3.85/4.0",
-            editorHTML: sampleEducationHTML,
-          },
-        ],
-      },
-      {
-        id: "experience",
-        title: "Relevant Experience",
-        items: [
-          {
-            title: "Software Engineering Intern",
-            subtitle: "Startup X (Part-time)",
-            meta: "Jan 2025 - May 2025",
-            location: "Remote",
-            editorHTML: `
+  name: "Maria Rodriguez",
+  title: "Computer Science Undergraduate",
+  phone: "(408) 777-1001",
+  email: "mrodriguez@university.edu",
+  location: "San Jose, CA",
+  linkedin: "linkedin.com/in/mariarodriguez",
+  github: "github.com/mariacodes",
+  // REMOVED: website: null,
+  summary:
+    "Motivated Computer Science student with a strong foundation in data structures and algorithms, seeking a challenging internship to apply theoretical knowledge in a professional environment. Proven ability to quickly master new technologies.",
+  sections: [
+    {
+      id: "education",
+      title: "Education",
+      items: [
+        {
+          title: "B.S. in Computer Science",
+          subtitle: "San Jose State University",
+          meta: "Expected May 2026",
+          location: "San Jose, CA",
+          gpa: "3.85/4.0",
+          editorHTML: sampleEducationHTML,
+        },
+      ],
+    },
+    {
+      id: "experience",
+      title: "Relevant Experience",
+      items: [
+        {
+          title: "Software Engineering Intern",
+          subtitle: "Startup X (Part-time)",
+          meta: "Jan 2025 - May 2025",
+          location: "Remote",
+          editorHTML: `
               <ul>
                 <li>Contributed to the front-end development of the company's dashboard using React and Tailwind CSS.</li>
                 <li>Implemented unit tests using Jest, achieving 90% code coverage for the main API utility functions.</li>
               </ul>
             `,
-          },
-        ],
-      },
-      {
-        id: "projects",
-        title: "Projects",
-        items: [
-          {
-            title: "E-Commerce Recommendation Engine",
-            subtitle: "Personal Project",
-            meta: "Python, Pandas, Sci-kit Learn",
-            location: "github.com/reco-engine",
-            editorHTML: `
+        },
+      ],
+    },
+    {
+      id: "projects",
+      title: "Projects",
+      items: [
+        {
+          title: "E-Commerce Recommendation Engine",
+          subtitle: "Personal Project",
+          meta: "Python, Pandas, Sci-kit Learn",
+          location: "github.com/reco-engine",
+          editorHTML: `
               <ul>
                 <li>Developed a collaborative filtering model to suggest products, reducing cold start issues by 40%.</li>
                 <li>Containerized the solution using Docker for easy deployment.</li>
               </ul>
             `,
-          },
-        ],
-      },
-      {
-        id: "skills",
-        title: "Technical Skills",
-        items: [
-          {
-            title: "Programming Languages",
-            editorHTML: "Python, C++, Java, JavaScript, SQL",
-            fields: [],
-          },
-          {
-            title: "Frameworks & Tools",
-            editorHTML: "React, Node.js, TensorFlow, Git, Docker, AWS",
-            fields: [],
-          },
-        ],
-      },
-    ],
-  };
+        },
+      ],
+    },
+    {
+      id: "skills",
+      title: "Technical Skills",
+      items: [
+        {
+          title: "Programming Languages",
+          editorHTML: "Python, C++, Java, JavaScript, SQL",
+          fields: [],
+        },
+        {
+          title: "Frameworks & Tools",
+          editorHTML: "React, Node.js, TensorFlow, Git, Docker, AWS",
+          fields: [],
+        },
+      ],
+    },
+  ],
+};
 
 export const DUMMY_TECH_ORIENTED_DATA: ResumeData = {
-    id: "tech-oriented",
-    name: "Kenji Tanaka",
-    title: "Full Stack Software Engineer",
-    phone: "(333) 444-5555",
-    email: "kenji.tanaka@dev.com",
-    location: "Seattle, WA",
-    linkedin: "linkedin.com/in/kenjitanaka",
-    github: "github.com/kenjidev",
-    website: "kenjitanaka.io",
-    summary:
-      "Experienced Full Stack Engineer specializing in robust, scalable systems using modern cloud infrastructure. Four years of professional experience driving deployment and automation initiatives in high-traffic production environments.",
-    sections: [
-      {
-        id: "experience",
-        title: "Professional Experience",
-        items: [
-          {
-            title: "Lead Backend Developer",
-            subtitle: "CloudScale Technologies",
-            meta: "2022 — Present",
-            location: "Seattle, WA",
-            editorHTML: sampleExperienceHTML,
-          },
-          {
-            title: "Software Engineer I",
-            subtitle: "DevOps Solutions LLC",
-            meta: "2020 — 2022",
-            location: "Remote",
-            editorHTML: `
+  name: "Kenji Tanaka",
+  title: "Full Stack Software Engineer",
+  phone: "(333) 444-5555",
+  email: "kenji.tanaka@dev.com",
+  location: "Seattle, WA",
+  linkedin: "linkedin.com/in/kenjitanaka",
+  github: "github.com/kenjidev",
+  website: "kenjitanaka.io",
+  summary:
+    "Experienced Full Stack Engineer specializing in robust, scalable systems using modern cloud infrastructure. Four years of professional experience driving deployment and automation initiatives in high-traffic production environments.",
+  sections: [
+    {
+      id: "experience",
+      title: "Professional Experience",
+      items: [
+        {
+          title: "Lead Backend Developer",
+          subtitle: "CloudScale Technologies",
+          meta: "2022 — Present",
+          location: "Seattle, WA",
+          editorHTML: sampleExperienceHTML,
+        },
+        {
+          title: "Software Engineer I",
+          subtitle: "DevOps Solutions LLC",
+          meta: "2020 — 2022",
+          location: "Remote",
+          editorHTML: `
               <ul>
                 <li>Implemented CI/CD pipelines using GitHub Actions, reducing deployment time from 45 minutes to 10 minutes.</li>
                 <li>Managed PostgreSQL databases and performed query optimization for high concurrency.</li>
               </ul>
             `,
-          },
-        ],
-      },
-      {
-        id: "projects",
-        title: "Key Projects",
-        items: [
-          {
-            title: "Real-Time Stock Tracker API",
-            subtitle: "Go, Redis, WebSocket",
-            meta: "2023",
-            location: "View on GitHub",
-            editorHTML: `
+        },
+      ],
+    },
+    {
+      id: "projects",
+      title: "Key Projects",
+      items: [
+        {
+          title: "Real-Time Stock Tracker API",
+          subtitle: "Go, Redis, WebSocket",
+          meta: "2023",
+          location: "View on GitHub",
+          editorHTML: `
               <ul>
                 <li>Built a high-throughput API to stream real-time stock data to over 5,000 concurrent users.</li>
               </ul>
             `,
-          },
-        ],
-      },
-      {
-        id: "education",
-        title: "Education",
-        items: [
-          {
-            title: "M.S. in Computer Engineering",
-            subtitle: "University of Washington",
-            meta: "2020",
-            location: "Seattle, WA",
-            // REMOVED: gpa: null,
-            // REMOVED: editorHTML: null,
-          },
-        ],
-      },
-      {
-        id: "skills",
-        title: "Skills",
-        items: [
-          {
-            title: "Backend",
-            // REMOVED: editorHTML: null,
-            fields: [
-              { label: "Go", value: "Expert" },
-              { label: "Node.js", value: "Advanced" },
-              { label: "Python", value: "Advanced" },
-              { label: "PostgreSQL" /* REMOVED: , value: null */ },
-              { label: "MongoDB" /* REMOVED: , value: null */ },
-            ],
-          },
-          {
-            title: "Cloud & DevOps",
-            // REMOVED: editorHTML: null,
-            fields: [
-              { label: "Kubernetes" /* REMOVED: , value: null */ },
-              { label: "AWS", value: "ECS/S3/Lambda" },
-              { label: "Docker" /* REMOVED: , value: null */ },
-              { label: "Terraform" /* REMOVED: , value: null */ },
-            ],
-          },
-        ],
-      },
-    ],
-  };
-
+        },
+      ],
+    },
+    {
+      id: "education",
+      title: "Education",
+      items: [
+        {
+          title: "M.S. in Computer Engineering",
+          subtitle: "University of Washington",
+          meta: "2020",
+          location: "Seattle, WA",
+          // REMOVED: gpa: null,
+          // REMOVED: editorHTML: null,
+        },
+      ],
+    },
+    {
+      id: "skills",
+      title: "Skills",
+      items: [
+        {
+          title: "Backend",
+          // REMOVED: editorHTML: null,
+          fields: [
+            { label: "Go", value: "Expert" },
+            { label: "Node.js", value: "Advanced" },
+            { label: "Python", value: "Advanced" },
+            { label: "PostgreSQL" /* REMOVED: , value: null */ },
+            { label: "MongoDB" /* REMOVED: , value: null */ },
+          ],
+        },
+        {
+          title: "Cloud & DevOps",
+          // REMOVED: editorHTML: null,
+          fields: [
+            { label: "Kubernetes" /* REMOVED: , value: null */ },
+            { label: "AWS", value: "ECS/S3/Lambda" },
+            { label: "Docker" /* REMOVED: , value: null */ },
+            { label: "Terraform" /* REMOVED: , value: null */ },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 // =================================================================
 // SECTION FIELD DEFINITIONS
@@ -726,7 +721,7 @@ export const sectionData: Record<string, SectionFields> = {
     title4: "Location",
     placeholder4: "Mountain View",
   },
-  
+
   skills: {
     title1: "Skill Category",
     placeholder1: "Languages",
@@ -804,4 +799,3 @@ export const sectionData: Record<string, SectionFields> = {
     placeholder4: "2022 – 2023",
   },
 };
-      
