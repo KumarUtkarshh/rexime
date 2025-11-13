@@ -723,3 +723,11 @@ export const sectionData: Record<string, SectionFields> = {
     placeholder4: "2022 – 2023",
   },
 };
+
+export const skillLevelMap: Record<string, string> = {
+  "1": "Beginner",
+  "2": "Intermediate",
+  "3": "Skilled",
+  "4": "Advanced",
+  "5": "Expert",
+};

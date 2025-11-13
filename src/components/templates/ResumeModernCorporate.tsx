@@ -1,19 +1,12 @@
 "use client";
 
 import { resumeColorAtom } from "@/app/store";
+import { skillLevelMap } from "@/lib/constants";
 import { ResumeData, ResumeEntry, ResumeSection } from "@/lib/resume-types";
 import { isNotEditorEmpty } from "@/lib/utils";
 import { useAtomValue } from "jotai";
 import { FC, RefObject } from "react";
 import TiptapHTML from "../editor/TiptapHTML";
-
-const skillLevelMap: Record<string, string> = {
-  "1": "Beginner",
-  "2": "Intermediate",
-  "3": "Skilled",
-  "4": "Advanced",
-  "5": "Expert",
-};
 
 const ModernTitle: FC<{ title: string; colorClass: string }> = ({
   title,
