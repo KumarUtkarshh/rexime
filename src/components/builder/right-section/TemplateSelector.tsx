@@ -1,5 +1,9 @@
 "use client";
-import { resumeAtom, resumeShowCaseIdxAtom } from "@/app/store";
+import {
+  isEditedResumeAtom,
+  resumeAtom,
+  resumeShowCaseIdxAtom,
+} from "@/app/store";
 import {
   DUMMY_AMSTERDAM_DATA,
   DUMMY_BERLIN_DATA,
@@ -11,7 +15,7 @@ import {
 } from "@/lib/constants";
 import { ResumeData } from "@/lib/resume-types";
 import { updateResume } from "@/lib/supabase/createResume";
-import { useAtom, useSetAtom } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { GrTemplate } from "react-icons/gr";
@@ -45,6 +49,7 @@ function ResumeImage({
 export default function TemplateSelector({ id }: { id: string }) {
   const [index, setIdx] = useAtom(resumeShowCaseIdxAtom);
   const setResumeData = useSetAtom(resumeAtom);
+  const isEditedResume = useAtomValue(isEditedResumeAtom);
   const images = [
     { imagePath: "/resume-simple.png", defaultResume: DUMMY_STANDARD_DATA },
     { imagePath: "/resume-berlin.jpg", defaultResume: DUMMY_BERLIN_DATA },
@@ -65,7 +70,9 @@ export default function TemplateSelector({ id }: { id: string }) {
   ];
 
   const handleClick = async (index: number, resume: ResumeData) => {
-    setResumeData(resume);
+    if (!isEditedResume) {
+      setResumeData(resume);
+    }
     setIdx(index);
     await updateResume(id, {
       image: images[index].imagePath,

@@ -1,4 +1,4 @@
-import { resumeAtom } from "@/app/store";
+import { isEditedResumeAtom, resumeAtom } from "@/app/store";
 import {
   ResumeData,
   ResumeEntry,
@@ -10,6 +10,7 @@ import React from "react";
 
 export const useUpdateResume = (field?: keyof ResumeData) => {
   const [resumeData, setResumeData] = useAtom(resumeAtom);
+  const [isEditedResume, setIsEditedResume] = useAtom(isEditedResumeAtom);
 
   // Generic handler for top-level text fields
   const handleChange = (
@@ -17,6 +18,8 @@ export const useUpdateResume = (field?: keyof ResumeData) => {
   ) => {
     const value = typeof e === "string" ? e : e.target.value;
     if (!field) return;
+
+    if (!isEditedResume) setIsEditedResume(true);
 
     setResumeData((prev) => ({
       ...prev,
