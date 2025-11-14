@@ -21,6 +21,7 @@ const sampleEducationHTML = `
 
 export const DUMMY_STANDARD_DATA: ResumeData = {
   name: "John Doe",
+  dummyimage: "/resume-simple.png",
   phone: "+91-8989898989",
   email: "Johndoe@gmail.com",
   linkedin: "https://www.linkedin.com/in/johndoe",
@@ -120,6 +121,7 @@ export const DUMMY_STANDARD_DATA: ResumeData = {
 
 export const DUMMY_BERLIN_DATA: ResumeData = {
   name: "TAYLOR COOK",
+  dummyimage: "/resume-berlin.jpg",
   title: "Programmer",
   location: "1600 Amphitheatre Road\nPalo Alto, CA 94304\nUnited States",
   phone: "(315) 802-8179",
@@ -209,6 +211,7 @@ export const DUMMY_BERLIN_DATA: ResumeData = {
 
 export const DUMMY_TIMELINE_DATA: ResumeData = {
   name: "Johnatan Alexander Carillo",
+  dummyimage: "/resume-timeline.png",
   title: "Operations Manager",
   phone: "+1 204 555 5555",
   email: "help@enhancv.com",
@@ -297,6 +300,7 @@ export const DUMMY_TIMELINE_DATA: ResumeData = {
 
 export const DUMMY_AMSTERDAM_DATA: ResumeData = {
   name: "Wes Turner",
+  dummyimage: "/resume-amsterdam.jpg",
   title: "Sales Manager",
   phone: "(719) 555-8237",
   email: "wes.turner@gmail.com",
@@ -386,6 +390,7 @@ export const DUMMY_AMSTERDAM_DATA: ResumeData = {
 
 export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
   name: "Alexandra Vance",
+  dummyimage: "/resume-aetherfall.png",
   title: "Director of Business Operations",
   phone: "+1 (999) 765-4321",
   email: "alexandra.vance@corp.net",
@@ -452,6 +457,7 @@ export const DUMMY_MODERN_CORPORATE_DATA: ResumeData = {
 
 export const DUMMY_STUDENT_ENTRY_DATA: ResumeData = {
   name: "Maria Rodriguez",
+  dummyimage: "/resume-lumora.png",
   title: "Computer Science Undergraduate",
   phone: "(408) 777-1001",
   email: "mrodriguez@university.edu",
@@ -538,6 +544,7 @@ export const DUMMY_STUDENT_ENTRY_DATA: ResumeData = {
 
 export const DUMMY_TECH_ORIENTED_DATA: ResumeData = {
   name: "Kenji Tanaka",
+  dummyimage: "/resume-kyoto.jpg",
   title: "Full Stack Software Engineer",
   phone: "(333) 444-5555",
   email: "kenji.tanaka@dev.com",

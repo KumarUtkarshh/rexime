@@ -25,6 +25,7 @@ export type ResumeSection = {
 
 export type ResumeData = {
   name: string;
+  dummyimage: string;
   title?: string;
   summary?: string;
   phone?: string;

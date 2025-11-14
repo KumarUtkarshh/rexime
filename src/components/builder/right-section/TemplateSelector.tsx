@@ -15,9 +15,9 @@ import {
 } from "@/lib/constants";
 import { ResumeData } from "@/lib/resume-types";
 import { updateResume } from "@/lib/supabase/createResume";
-import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import Image from "next/image";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useEffect } from "react";
 import { GrTemplate } from "react-icons/gr";
 import { ResumeHeading } from "../left-section/ResumeHeading";
 
@@ -48,8 +48,17 @@ function ResumeImage({
 
 export default function TemplateSelector({ id }: { id: string }) {
   const [index, setIdx] = useAtom(resumeShowCaseIdxAtom);
-  const setResumeData = useSetAtom(resumeAtom);
+  const [resume, setResumeData] = useAtom(resumeAtom);
   const isEditedResume = useAtomValue(isEditedResumeAtom);
+
+  useEffect(() => {
+    const index = images.findIndex(
+      (item) => item.imagePath === resume.dummyimage
+    );
+
+    setIdx(index === -1 ? 0 : index);
+  }, []);
+
   const images = [
     { imagePath: "/resume-simple.png", defaultResume: DUMMY_STANDARD_DATA },
     { imagePath: "/resume-berlin.jpg", defaultResume: DUMMY_BERLIN_DATA },
