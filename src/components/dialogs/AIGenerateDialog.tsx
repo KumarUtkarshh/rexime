@@ -45,10 +45,8 @@ export default function AIGenerateDialog() {
         throw new Error(error.message || "Something went wrong");
       }
       const data = await res.json();
-
       const aiResumeData = data.reply as ResumeData;
-
-      console.log(aiResumeData);
+      // console.log(aiResumeData);
       setResumeData(aiResumeData);
 
       setisOpen(false);
