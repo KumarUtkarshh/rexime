@@ -7,6 +7,7 @@ import TextAlign from "@tiptap/extension-text-align";
 import { TextStyle } from "@tiptap/extension-text-style";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { useEffect } from "react";
 import { Toolbar } from "./Toolbar";
 
 const TiptapEditor = ({
@@ -16,6 +17,8 @@ const TiptapEditor = ({
   content?: string;
   onContentChange: (html: string) => void;
 }) => {
+  console.log(content);
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -46,6 +49,13 @@ const TiptapEditor = ({
 
     immediatelyRender: false,
   });
+
+  useEffect(() => {
+    if (editor && content !== editor.getHTML()) {
+      editor.commands.setContent(content ?? "");
+    }
+  }, [content, editor]);
+
   if (!editor) return null; // Prevent render before init
   return (
     <div className="text-white">

@@ -1,5 +1,9 @@
 "use client";
-import { resumeAtom, resumeShowCaseIdxAtom } from "@/app/store";
+import {
+  isEditedResumeAtom,
+  resumeAtom,
+  resumeShowCaseIdxAtom,
+} from "@/app/store";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,7 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { resumes } from "@/lib/constants";
 import { ResumeData } from "@/lib/resume-types";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useRef, useState } from "react";
 import { RiAiGenerate2 } from "react-icons/ri";
 import { SpinnerInfinity } from "spinners-react";
@@ -20,6 +24,7 @@ export default function AIGenerateDialog() {
   const [isLoading, setisLoading] = useState(false);
   const textRef = useRef<HTMLTextAreaElement>(null);
   const setResumeData = useSetAtom(resumeAtom);
+  const [isEditedResume, setEditedResume] = useAtom(isEditedResumeAtom);
   const index = useAtomValue(resumeShowCaseIdxAtom);
   const [isOpen, setisOpen] = useState(false);
 
@@ -46,10 +51,11 @@ export default function AIGenerateDialog() {
       }
       const data = await res.json();
       const aiResumeData = data.reply as ResumeData;
-      // console.log(aiResumeData);
-      setResumeData(aiResumeData);
 
-      setisOpen(false);
+      console.log(aiResumeData);
+
+      setResumeData(aiResumeData);
+      if (!isEditedResume) setEditedResume(true);
     } catch (error) {
       toastManager.add({
         title: (error as Error).message,
@@ -57,6 +63,7 @@ export default function AIGenerateDialog() {
       });
     } finally {
       setisLoading(false);
+      setisOpen(false);
     }
   };
 

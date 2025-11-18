@@ -127,7 +127,7 @@ export const DUMMY_BERLIN_DATA: ResumeData = {
   phone: "(315) 802-8179",
   email: "taylor.cook@gmail.com",
   summary:
-    "<p>Innovative Programmer and Internet Entrepreneur striving to make the world a more unified and connected place. A creative thinker, adept in software development and working with various data structures.</p>",
+    "<p>Passionate Computer Science undergraduate skilled in full-stack development with expertise in React, Flutter, and Firebase. Proven ability to build impactful applications like PeakFlow and Alpha Omega. Active GDG member experienced in collaborative problem-solving and database management. Eager to contribute innovative tech solutions in professional environments.</p>",
   languages: ["English", "French"],
   sections: [
     {
