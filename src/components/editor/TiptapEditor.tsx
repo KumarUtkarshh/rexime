@@ -17,8 +17,6 @@ const TiptapEditor = ({
   content?: string;
   onContentChange: (html: string) => void;
 }) => {
-  console.log(content);
-
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
