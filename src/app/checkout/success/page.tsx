@@ -9,21 +9,7 @@ import { Suspense } from "react";
 function PaymentStatus() {
   const params = useSearchParams();
   const status = params.get("status");
-  // const payment_id = params.get("payment_id");
   const isFailed = status === "failed";
-
-  // useEffect(() => {
-  //   const getPayementDetail = async () => {
-  //     if (payment_id) {
-  //       const payment = await dodopayments.payments.retrieve(payment_id);
-  //       console.log(payment);
-  //     } else {
-  //       console.log("no payment");
-  //     }
-  //   };
-
-  //   getPayementDetail();
-  // }, []);
 
   return (
     <div
