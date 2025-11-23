@@ -30,10 +30,10 @@ function PaymentStatus() {
           {isFailed ? "Failed" : isProcessing ? "Processing" : "Successful"}
         </div>
         {isProcessing && (
-          <div className="text-sm py-5">
+          <div className="text-sm py-2">
             Your bank is taking longer than usual to verify the transaction. If
-            this doesn’t complete, please try another card or enable online
-            payments.
+            this doesn’t complete, please try another card or another payment
+            method.
           </div>
         )}
         {isFailed ? "Please try again later" : "Thank you for donating"}
